@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{0E38B5F9-C9AB-421B-B069-38427ECD39AC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PunchCardExample/Views/PunchCardTestPage.xaml">
+    <Files>
+      <File FileName="PunchCardExample/CustomControls/PunchCardThree.cs" Line="94" Column="45" />
+      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml" Line="4" Column="54" />
+      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml.cs" Line="20" Column="58" />
+      <File FileName="PunchCardExample/App.xaml.cs" Line="7" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PunchCardExample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.181B3DA1-30B6-4A59-9D79-331C3C344171" />
+  <MultiItemStartupConfigurations />
+</Properties>

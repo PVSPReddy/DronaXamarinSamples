@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="PunchCardExample.PunchCardTestPage">
+	
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+					<Label Text="&lt;==" TextColor="Black" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButtonTapped"/> 
+                        </Label.GestureRecognizers>
+                    </Label>
+					<Label Text="PunchCardPage" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+					
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+				<ScrollView Orientation="Both"  HorizontalOptions="FillAndExpand" BackgroundColor="Navy" VerticalOptions="FillAndExpand">
+					<StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Green" VerticalOptions="FillAndExpand" Padding="10,0,10,0">
+						<StackLayout x:Name="StackPunchHolder" HorizontalOptions="Center" VerticalOptions="Center" Padding="20,10,20,10">
+							<ContentView x:Name="contentPunchHolder">
+							</ContentView>
+						</StackLayout>
+					</StackLayout>
+				</ScrollView>
+				<StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Teal" VerticalOptions="End" Padding="20,10,20,10">
+					<Label x:Name="lblObtainedData" >
+					</Label>
+					<StackLayout Orientation="Horizontal">
+						<Entry x:Name="entryPunchesRequired" Placeholder="Enter no of Punches required" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+						</Entry>
+						<Switch x:Name="switchStartLoop" IsToggled="false">
+						</Switch>
+					</StackLayout>
+                    <Entry x:Name="entryPunchesPunched" Placeholder="Enter no of Punches Empty" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+                    <Entry x:Name="entryPunchesColumns" Placeholder="Enter no of Columns to be limited" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+                    <Entry x:Name="entryPunchHeight" Placeholder="Enter the height of the punch required" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+                    <Button Text="Submit" BackgroundColor="Maroon" Clicked="SubmitClicked">
+                    </Button>
+                </StackLayout>
+			</StackLayout>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PunchCardExample;assembly=PunchCardExample"
+	x:Class="PunchCardExample.PunchCardIntroPage">
+
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+	
+    <ContentPage.Content>
+
+        <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="Intro Page" TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20,30,20,0">
+					<Entry x:Name="entryPunchesRequired" Placeholder="Enter no of Punches required" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+					</Entry>
+					<Entry x:Name="entryPunchesPunched" Placeholder="Enter no of Punches Empty" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+					<Entry x:Name="entryPunchesColumns" Placeholder="Enter no of Columns to be limited" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+					<Entry x:Name="entryPunchHeight" Placeholder="Enter the height of the punch required" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+					<Button Text="Submit" Clicked="SubmitClicked">
+					</Button>
+				</StackLayout>
+			</StackLayout>
+
+		</AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
