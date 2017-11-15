@@ -9,7 +9,6 @@ namespace PunchCardExample
         public PunchCardThree(int punchesNumber, int punchedNumber, int punchHeight, int columnLimit)
         {
             int noOfRows = 0, noOfColumns = 0;
-
             var matrixNumber = Convert.ToInt32(Math.Sqrt(punchesNumber));
             if (matrixNumber < columnLimit)
             {
@@ -52,7 +51,6 @@ namespace PunchCardExample
                     noOfRows = (punchesNumber / noOfColumns) + 1;
                 }
             }
-
             RelativeLayout relativePunchCard = new RelativeLayout()
             {
                 BackgroundColor = Color.White,
@@ -60,7 +58,6 @@ namespace PunchCardExample
                 WidthRequest = (punchHeight) * noOfColumns
             };
             int imagesAllocated = 0;
-
             for (int i = 0; i < noOfRows; i++)
             {
                 for (int j = 0; j < noOfColumns; j++)
@@ -92,17 +89,11 @@ namespace PunchCardExample
                         double imageXPoint, imageYPoint;
                         imageYPoint = i * punchHeight;
                         imageXPoint = (j * punchHeight);
-                        relativePunchCard.Children.Add(punchImage,
-                                                       Constraint.Constant(imageXPoint),
-                                                       Constraint.Constant(imageYPoint),
-                                                       Constraint.Constant(punchHeight),
-                                                       Constraint.Constant(punchHeight));
+                        relativePunchCard.Children.Add(punchImage, Constraint.Constant(imageXPoint), Constraint.Constant(imageYPoint), Constraint.Constant(punchHeight), Constraint.Constant(punchHeight));
                     }
-
                 }
-            }
-            string responseData = "No of Rows: " + noOfRows + ", \n" + "No of Columns: " + noOfColumns;
-            PunchCardTestPage.punchCardTestPage.FillLabelData(responseData);
+            }//string responseData = "No of Rows: " + noOfRows + ", \n" + "No of Columns: " + noOfColumns;
+            PunchCardTestPage.punchCardTestPage.FillLabelData("No of Rows: " + noOfRows + ", \n" + "No of Columns: " + noOfColumns);
             Content = relativePunchCard;
         }
     }
