@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{53C01A5C-0E38-43EA-BBC6-80255DDB9494}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/BluetoothServices.cs">
+    <Files>
+      <File FileName="Droid/DependencyServices/BluetoothServices.cs" Line="72" Column="19" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessPage.xaml" Line="1" Column="1" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessPage.xaml.cs" Line="15" Column="1" />
+      <File FileName="BluetoothExample/DependencyServices/IBluetooth.cs" Line="13" Column="5" />
+      <File FileName="iOS/DependencyServices/BluetoothServices.cs" Line="34" Column="14" />
+      <File FileName="Droid/DependencyServices/IBluetoothAccessService.cs" Line="14" Column="14" />
+      <File FileName="BluetoothExample/App.xaml.cs" Line="7" Column="21" />
+      <File FileName="Droid/MainActivity.cs" Line="12" Column="2" />
+      <File FileName="Droid/Properties/AndroidManifest.xml" Line="9" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BluetoothExample.Droid PreferredExecutionTarget="Android.ZY222Z3P7X" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/BluetoothExample/Views/BluetoothAccessPage.xaml.cs" relfile="BluetoothExample/Views/BluetoothAccessPage.xaml.cs" line="24" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="47" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="108" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="316" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="304" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="300" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="306" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="133" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="27" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="173" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/BluetoothServices.cs" relfile="Droid/DependencyServices/BluetoothServices.cs" line="171" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.BluetoothExample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.181B3DA1-30B6-4A59-9D79-331C3C344171" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
