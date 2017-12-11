@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace PunchCardExample
+namespace DateTimeExample
 {
     public partial class App : Application
     {
@@ -8,7 +8,7 @@ namespace PunchCardExample
         {
             InitializeComponent();
 
-            MainPage = new PunchCardIntroPage();
+            MainPage = new OTPStopWatchIntroPage();
         }
 
         protected override void OnStart()

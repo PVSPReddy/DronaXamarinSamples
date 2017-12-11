@@ -45,7 +45,7 @@
 						</StackLayout>
 					</StackLayout>
 				</ScrollView>
-				<StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Teal" VerticalOptions="End" Padding="20,10,20,10">
+				<!--<StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Teal" VerticalOptions="End" Padding="20,10,20,10">
 					<Label x:Name="lblObtainedData" >
 					</Label>
 					<StackLayout Orientation="Horizontal">
@@ -62,7 +62,7 @@
                     </Entry>
                     <Button Text="Submit" BackgroundColor="Maroon" Clicked="SubmitClicked">
                     </Button>
-                </StackLayout>
+                </StackLayout>-->
 			</StackLayout>
 
         </AbsoluteLayout>

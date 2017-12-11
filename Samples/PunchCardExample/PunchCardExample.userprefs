@@ -1,10 +1,11 @@
-﻿<Properties StartupConfiguration="{0E38B5F9-C9AB-421B-B069-38427ECD39AC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PunchCardExample/Views/PunchCardTestPage.xaml">
+﻿<Properties StartupConfiguration="{DC37F107-61CC-489C-81BA-216ADD4AE50A}|Default">
+  <MonoDevelop.Ide.ItemProperties.PunchCardExample.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PunchCardExample/Views/PunchCardTestPage.xaml.cs">
     <Files>
-      <File FileName="PunchCardExample/CustomControls/PunchCardThree.cs" Line="94" Column="45" />
-      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml" Line="4" Column="54" />
-      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml.cs" Line="20" Column="58" />
-      <File FileName="PunchCardExample/App.xaml.cs" Line="7" Column="21" />
+      <File FileName="PunchCardExample/CustomControls/PunchCardThree.cs" Line="63" Column="54" />
+      <File FileName="PunchCardExample/App.xaml.cs" Line="11" Column="47" />
+      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml" Line="67" Column="4" />
+      <File FileName="PunchCardExample/Views/PunchCardTestPage.xaml.cs" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

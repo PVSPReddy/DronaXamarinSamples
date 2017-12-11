@@ -14,7 +14,7 @@ namespace PunchCardExample
             punchCardTestPage = this;
             int punchHeight = (punch_Height == 0) ? 20 : punch_Height;
             int punchColumns = (punch_Columns == 0) ? 8 : punch_Columns;
-            //AssignPunches(punchedRequired, punches_Filled, punchHeight, punchColumns);
+            AssignPunches(punchedRequired, punches_Filled, punchColumns, punchHeight);
         }
 
         void BackButtonTapped(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace PunchCardExample
         {
             try
             {
-                lblObtainedData.Text = fillableData;
+                //lblObtainedData.Text = fillableData;
             }
             catch (Exception ex)
             {
@@ -41,6 +41,7 @@ namespace PunchCardExample
             }
         }
 
+        /*
         async void SubmitClicked(object sender, EventArgs e)
         {
             try
@@ -91,6 +92,7 @@ namespace PunchCardExample
                 var msg = ex.Message;
             }
         }
+        */
 
         async Task<bool> AssignPunches(int punchedRequired, int punches_Filled, int punch_Columns, int punch_Height)
         {
