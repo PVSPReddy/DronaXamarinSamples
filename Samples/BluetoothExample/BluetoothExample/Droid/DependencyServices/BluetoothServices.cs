@@ -75,11 +75,12 @@ namespace BluetoothExample.Droid
 
 
                 //receiver = new SampleReceiver();
-                //IntentFilter filter = new IntentFilter(BluetoothDevice.ActionFound);
+                IntentFilter filter = new IntentFilter(BluetoothDevice.ActionFound);
                 CurrentActivity = (Activity)Forms.Context;
-                IntentFilter filter = new IntentFilter("testing");
+                //IntentFilter filter = new IntentFilter("testing");
                 filter.AddAction(BluetoothAdapter.ActionDiscoveryFinished);
                 filter.AddAction(BluetoothAdapter.ActionDiscoveryStarted);
+                //filter.AddAction(BluetoothAdapter.ActionDiscoveryStarted);
                 filter.AddAction(BluetoothAdapter.ActionDiscoveryFinished);
                 //LocalBroadcastManager.GetInstance(this).RegisterReceiver(receiver, filter);
                 //LocalBroadcastManager.GetInstance(this).RegisterReceiver(receiver, filter);

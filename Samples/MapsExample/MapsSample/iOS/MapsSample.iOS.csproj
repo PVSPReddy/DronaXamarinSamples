@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{1B6A86EA-94F9-488D-83FF-B44B92D18C4F}</ProjectGuid>
+    <ProjectGuid>{E174193B-2D1C-4D17-BD05-87518078A486}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BluetoothExample.iOS</RootNamespace>
-    <AssemblyName>BluetoothExample.iOS</AssemblyName>
+    <RootNamespace>MapsSample.iOS</RootNamespace>
+    <AssemblyName>MapsSample.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -23,7 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>32927</IOSDebuggerPort>
+    <IOSDebuggerPort>25904</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -96,9 +96,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BluetoothExample\BluetoothExample.csproj">
-      <Project>{BF5E48D1-5BE8-43D7-9067-AAB0B0A25B02}</Project>
-      <Name>BluetoothExample</Name>
+    <ProjectReference Include="..\MapsSample\MapsSample.csproj">
+      <Project>{155C3D34-A6EA-48CC-99B9-77F4E06806AE}</Project>
+      <Name>MapsSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="CustomControls\" />
     <Folder Include="DependencyServices\" />
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +121,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="DependencyServices\BluetoothServices.cs" />
-    <Compile Include="DependencyServices\IBluetoothAccessService.cs" />
-    <Compile Include="DependencyServices\BluetoothLEServices.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

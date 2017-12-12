@@ -17,11 +17,17 @@
 			<StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 				<StackLayout>
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-						<Button x:Name="startBluetooth" Text="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StartBluetoothClicked">
+						<Button x:Name="startCoreBluetooth" Text="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StartCoreBluetoothClicked">
 						</Button>
-						<Button x:Name="stopBluetooth" Text="Stop" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StopBluetoothClicked">
+						<Button x:Name="stopCoreBluetooth" Text="Stop" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StopCoreBluetoothClicked">
                         </Button>
 					</StackLayout>
+					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Button x:Name="startLEBluetooth" Text="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StartLEBluetoothClicked">
+                        </Button>
+                        <Button x:Name="stopLeBluetooth" Text="Stop" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StopLEBluetoothClicked">
+                        </Button>
+                    </StackLayout>
 					<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<ListView x:Name="lvDisplay">
 							<ListView.ItemTemplate>
