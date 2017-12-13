@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.MapsSample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.181B3DA1-30B6-4A59-9D79-331C3C344171" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MapsSample/Views/AccessingExternalMaps/ExternalMapsCallPage.xaml.cs">
     <Files>
-      <File FileName="MapsSample/Views/AccessingExternalMaps/ExternalMapsCallPage.xaml.cs" Line="6" Column="1" />
+      <File FileName="MapsSample/Views/AccessingExternalMaps/ExternalMapsCallPage.xaml" Line="1" Column="1" />
+      <File FileName="MapsSample/Views/AccessingExternalMaps/ExternalMapsCallPage.xaml.cs" Line="87" Column="9" />
       <File FileName="MapsSample/App.xaml.cs" Line="4" Column="2" />
-      <File FileName="MapsSample/Views/AccessingExternalMaps/ExternalMapsCallPage.xaml" Line="21" Column="139" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

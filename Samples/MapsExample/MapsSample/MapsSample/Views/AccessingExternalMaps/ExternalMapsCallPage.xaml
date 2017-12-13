@@ -18,8 +18,14 @@
                 <StackLayout>
 					
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-						<Picker x:Name="urlSchemePicker" HorizontalOptions="FillAndExpand" VerticalOptions="Center" SelectedIndexChanged="PickerItemSelected">
-						</Picker>
+						<StackLayout Padding="20,0,20,0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+							<Picker x:Name="urlSchemePicker" HorizontalOptions="FillAndExpand" VerticalOptions="Center" SelectedIndexChanged="URLSchemeItemSelected">
+							</Picker>
+							<Picker x:Name="pickerMapType" HorizontalOptions="FillAndExpand" VerticalOptions="Center" SelectedIndexChanged="MapTypeItemSelected">
+							</Picker>
+							<Picker x:Name="pickerTransportType" HorizontalOptions="FillAndExpand" VerticalOptions="Center" SelectedIndexChanged="TransportTypeItemSelected">
+                            </Picker>
+						</StackLayout>
                         <Button x:Name="goToMaps" Text="Go To Maps" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="GoToInbuiltMaps">
                         </Button>
                     </StackLayout>
