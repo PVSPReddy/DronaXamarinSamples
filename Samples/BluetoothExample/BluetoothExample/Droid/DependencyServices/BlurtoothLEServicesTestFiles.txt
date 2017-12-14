@@ -1,0 +1,339 @@
+﻿Test 1
+------
+using System;
+using BluetoothExample.Droid;
+using Xamarin.Forms;
+using Android.Bluetooth;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Android.Content;
+using Android.OS;
+using Android.Bluetooth.LE;
+
+[assembly: Dependency(typeof(BluetoothLEServices))]
+namespace BluetoothExample.Droid
+{
+    public class BluetoothLEServices : Java.Lang.Object, IBluetoothLE, BluetoothAdapter.ILeScanCallback
+    {
+        public BluetoothLEServices()
+        {
+            var appContext = Android.App.Application.Context;
+
+
+            //bluetoothManager = (BluetoothManager)appContext.GetSystemService("bluetooth");
+            bluetoothManager = (BluetoothManager)appContext.GetSystemService(Context.BluetoothService);
+
+            bluetoothAdapter = bluetoothManager.Adapter;
+            bluetoothAdapter.Disable();
+            bluetoothAdapter.CancelDiscovery();
+
+            //bluetoothAdapter = BluetoothAdapter.DefaultAdapter;
+
+
+            //callBack = new GattCallback(this);
+
+        }
+
+        public IntPtr Handle
+        {
+            get;
+            //{
+            //    throw new NotImplementedException();
+            //}
+        }
+
+        private BluetoothManager bluetoothManager;
+        private BluetoothAdapter bluetoothAdapter;
+        private BluetoothLeScanner bluetoothLEScanner;
+        //protected readonly GattCallback callBack;
+        BluetoothCallBackEvents bluetoothCallBack;
+        BluetoothScanCallBack bluetoothScanCallBack;
+
+        public async Task<bool> StartLEBluetooth()
+        {
+            try
+            {
+                /*
+                var appContext = Android.App.Application.Context;
+                //bluetoothManager = (BluetoothManager)appContext.GetSystemService("bluetooth");
+                bluetoothManager = (BluetoothManager)appContext.GetSystemService(Context.BluetoothService);
+
+
+                //BluetoothAdapter bluetoothAdapter = (BluetoothAdapter)this.GetSystemService(Context.BluetoothService);
+                //BluetoothAdapter adapter = BluetoothAdapter.DefaultAdapter;
+                bluetoothAdapter = bluetoothManager.Adapter;
+                //bluetoothAdapter = (BluetoothAdapter)appContext.GetSystemService(Context.BluetoothService);
+                //bluetoothAdapter = BluetoothAdapter.DefaultAdapter;
+                */
+
+
+                var bluetoothState = bluetoothAdapter.State;
+                if (bluetoothState == State.Off)
+                {
+                    bluetoothAdapter.Enable();
+                    await Task.Delay(2000);
+                }
+
+                if (Build.VERSION.SdkInt >= Build.VERSION_CODES.Lollipop)
+                {
+                    bluetoothScanCallBack = new BluetoothScanCallBack();
+                    bluetoothLEScanner = bluetoothAdapter.BluetoothLeScanner;
+                    bluetoothLEScanner.StartScan(bluetoothScanCallBack);
+                }
+                else if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr2)
+                {
+                    bluetoothAdapter.StartDiscovery();
+                    bluetoothAdapter.StartLeScan(this);
+                    //bluetoothCallBack = new BluetoothCallBackEvents();
+                    //bluetoothAdapter.StartLeScan(bluetoothCallBack);
+                }
+                else
+                {
+                    bluetoothAdapter.StartDiscovery();
+                }
+
+                await Task.Delay(15000);
+                //await StopLEBluetooth();
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                System.Diagnostics.Debug.WriteLine("From StartScan Error : \n" + ex.StackTrace);
+                System.Console.WriteLine("From StartScan Error : \n" + ex.StackTrace);
+            }
+            return true;
+        }
+
+        public async Task<bool> StopLEBluetooth()
+        {
+            if (bluetoothAdapter != null)
+            {
+                if (bluetoothAdapter.IsEnabled)
+                {
+                    try
+                    {
+                        var datas = bluetoothAdapter.BondedDevices;
+                        foreach (var items in datas)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Paired/Bonded Device : \n" + items.Name);
+                            System.Console.WriteLine("Paired/Bonded Device : \n" + items.Name);
+                        }
+
+                        if (Build.VERSION.SdkInt >= Build.VERSION_CODES.Lollipop)
+                        {
+                            bluetoothLEScanner.StartScan(bluetoothScanCallBack);
+                        }
+                        else if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr2)
+                        {
+                            bluetoothAdapter.StopLeScan(this);
+                            //bluetoothAdapter.StopLeScan(bluetoothCallBack);
+                        }
+                        else
+                        {
+                            bluetoothAdapter.CancelDiscovery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        var msg = ex.Message;
+                        System.Diagnostics.Debug.WriteLine("From StopScan Error : \n" + ex.StackTrace);
+                        System.Console.WriteLine("From StopScan Error : \n" + ex.StackTrace);
+                    }
+                    bluetoothAdapter.Disable();
+                }
+            }
+            return true;
+        }
+
+        public async Task<bool> ConnectDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
+        public async Task<bool> DisconnectDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            //throw new NotImplementedException();
+        }
+
+
+        public void OnLeScan(BluetoothDevice device, int rssi, byte[] scanRecord)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            //throw new NotImplementedException();
+        }
+
+        /*
+        protected class GattCallback : BluetoothGattCallback
+        {
+            protected BluetoothLEServices _parent;
+
+            public GattCallback(BluetoothLEServices parent)
+            {
+                this._parent = parent;
+            }
+
+            public override void OnConnectionStateChange(BluetoothGatt gatt, GattStatus status, ProfileState newState)
+            {
+                Console.WriteLine("OnConnectionStateChange: ");
+                base.OnConnectionStateChange(gatt, status, newState);
+
+                switch (newState)
+                {
+                    // disconnected
+                    case ProfileState.Disconnected:
+                        Console.WriteLine("disconnected");
+                        ////TODO/BUG: Need to remove this, but can't remove the key (uncomment and see bug on disconnect)
+                        ////                  if (this._parent._connectedDevices.ContainsKey (gatt.Device))
+                        ////                      this._parent._connectedDevices.Remove (gatt.Device);
+                        //this._parent.DeviceDisconnected(this, new DeviceConnectionEventArgs() { Device = gatt.Device });
+                        break;
+                    // connecting
+                    case ProfileState.Connecting:
+                        Console.WriteLine("Connecting");
+                        break;
+                    // connected
+                    case ProfileState.Connected:
+                        Console.WriteLine("Connected");
+                        ////TODO/BUGBUG: need to remove this when disconnected
+                        //this._parent._connectedDevices.Add(gatt.Device, gatt);
+                        //this._parent.DeviceConnected(this, new DeviceConnectionEventArgs() { Device = gatt.Device });
+                        break;
+                    // disconnecting
+                    case ProfileState.Disconnecting:
+                        Console.WriteLine("Disconnecting");
+                        break;
+                }
+            }
+
+            public override void OnServicesDiscovered(BluetoothGatt gatt, GattStatus status)
+            {
+                base.OnServicesDiscovered(gatt, status);
+
+                Console.WriteLine("OnServicesDiscovered: " + status.ToString());
+
+                //TODO: somehow, we need to tie this directly to the device, rather than for all
+                // google's API deisgners are children.
+
+                ////TODO: not sure if this gets called after all services have been enumerated or not
+                //if (!this._parent._services.ContainsKey(gatt.Device))
+                //    this._parent.Services.Add(gatt.Device, this._parent._connectedDevices[gatt.Device].Services);
+                //else
+                //    this._parent._services[gatt.Device] = this._parent._connectedDevices[gatt.Device].Services;
+
+                //this._parent.ServiceDiscovered(this, new ServiceDiscoveredEventArgs()
+                //{
+                //    Gatt = gatt
+                //});
+            }
+
+        }
+        */
+
+    }
+
+    public class BluetoothCallBackEvents : BluetoothAdapter.ILeScanCallback
+    {
+        public IntPtr Handle
+        {
+            get;
+            //{
+            //    throw new NotImplementedException();
+            //}
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            //throw new NotImplementedException();
+        }
+
+        public void OnLeScan(BluetoothDevice device, int rssi, byte[] scanRecord)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("From Lollipop Result : \n" + device.Name);
+                System.Console.WriteLine("From Lollipop Result : \n" + device.Name);
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                System.Diagnostics.Debug.WriteLine("From Lollipop Result : \n" + ex.StackTrace);
+                System.Console.WriteLine("From Lollipop Result : \n" + ex.StackTrace);
+            }
+            //throw new NotImplementedException();
+        }
+    }
+
+    public class BluetoothScanCallBack : Android.Bluetooth.LE.ScanCallback
+    {
+        public override void OnScanResult(Android.Bluetooth.LE.ScanCallbackType callbackType, Android.Bluetooth.LE.ScanResult result)
+        {
+            base.OnScanResult(callbackType, result);
+
+            System.Diagnostics.Debug.WriteLine("From Lollipop Result : \n" + result.Device.Name);
+            System.Console.WriteLine("From Lollipop Result : \n" + result.Device.Name);
+        }
+
+        public override void OnBatchScanResults(IList<Android.Bluetooth.LE.ScanResult> results)
+        {
+            base.OnBatchScanResults(results);
+
+            foreach (var result in results)
+            {
+                System.Diagnostics.Debug.WriteLine("From Lollipop Results : \n" + result.Device.Name);
+                System.Console.WriteLine("From Lollipop Results : \n" + result.Device.Name);
+            }
+        }
+
+        public override void OnScanFailed(Android.Bluetooth.LE.ScanFailure errorCode)
+        {
+            base.OnScanFailed(errorCode);
+
+            System.Diagnostics.Debug.WriteLine("From Lollipop ScanFailed : \n" + errorCode);
+            System.Console.WriteLine("From Lollipop ScanFailed : \n" + errorCode);
+        }
+    }
+}

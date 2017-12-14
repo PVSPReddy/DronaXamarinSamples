@@ -95,12 +95,14 @@
     <Compile Include="DependencyServices\BluetoothServices.cs" />
     <Compile Include="DependencyServices\IBluetoothAccessService.cs" />
     <Compile Include="DependencyServices\BluetoothLEServices.cs" />
+    <Compile Include="DependencyServices\FromPlugin\BluetoothLEManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
+    <None Include="DependencyServices\BlurtoothLEServicesTestFiles.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -113,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DependencyServices\" />
+    <Folder Include="DependencyServices\FromPlugin\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

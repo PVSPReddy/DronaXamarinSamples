@@ -55,17 +55,17 @@ namespace BluetoothExample.Droid
                 bluetoothManager = (BluetoothManager)appContext.GetSystemService("bluetooth");
                 bluetoothAdapter = bluetoothManager.Adapter;
                 var bluetoothState = bluetoothAdapter.State;
-                if (bluetoothState == State.Off)
-                {
+                //if (bluetoothState == Android.Bluetooth.BluetoothAdapter.State.Off)
+                //{
 
-                    bluetoothAdapter.Enable();
-                    bluetoothAdapter.StartDiscovery();
-                }
-                else
-                {
-                    //BluetoothAdapter.DefaultAdapter.BluetoothLeScanner.StartSca;
-                    bluetoothAdapter.StartDiscovery();
-                }
+                //    bluetoothAdapter.Enable();
+                //    bluetoothAdapter.StartDiscovery();
+                //}
+                //else
+                //{
+                //    //BluetoothAdapter.DefaultAdapter.BluetoothLeScanner.StartSca;
+                //    bluetoothAdapter.StartDiscovery();
+                //}
                 /*
                 var scanner = bluetoothAdapter.StartLeScan(this);
                 var pairedDevices = bluetoothAdapter.BondedDevices;
@@ -117,10 +117,10 @@ namespace BluetoothExample.Droid
         {
             try
             {
-                if (bluetoothAdapter.State == State.On || bluetoothAdapter.State == State.TurningOff)
-                {
-                    bluetoothAdapter.Disable();
-                }
+                //if (bluetoothAdapter.State == State.On || bluetoothAdapter.State == State.TurningOff)
+                //{
+                //    bluetoothAdapter.Disable();
+                //}
             }
             catch (Exception ex)
             {

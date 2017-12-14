@@ -18,6 +18,8 @@ namespace BluetoothExample.iOS
         bool isScanning;
         public List<CBPeripheral> devicesList = new List<CBPeripheral>();
 
+        public event EventHandler<IDeviceInfoEventArgs> DiscoveredDevice;
+
         public override void UpdatedState(CBCentralManager central)
         {
             try

@@ -11,12 +11,18 @@ namespace BluetoothExample
         IBluetooth bluetoothServices;
         IBluetoothLE bluetoothLEServices = DependencyService.Get<IBluetoothLE>();
         public static BluetoothAccessPage bluetoothAccessPage;
+        List<AllBluetoothDevices> allDevices;
 
         public BluetoothAccessPage()
         {
             InitializeComponent();
             bluetoothAccessPage = this;
             bluetoothServices = DependencyService.Get<IBluetooth>();
+            allDevices = new List<AllBluetoothDevices>();
+            bluetoothLEServices.DiscoveredDevice += async (object sender, IDeviceInfoEventArgs e) =>
+            {
+                await FillDataToList();
+            };
         }
 
         void StartCoreBluetoothClicked(object sender, EventArgs e)
@@ -66,10 +72,29 @@ namespace BluetoothExample
             }
         }
 
+        public async Task<bool> FillDataToList()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
         public async Task<bool> DispayMessages(string message)
         {
             await DisplayAlert("BlueTooth", message, "Ok");
             return true;
         }
+    }
+
+    public class AllBluetoothDevices
+    {
+        string DeviceName { get; set; }
+        string DeviceAddress { get; set; }
     }
 }

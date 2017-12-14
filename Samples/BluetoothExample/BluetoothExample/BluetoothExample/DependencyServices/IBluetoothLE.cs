@@ -12,5 +12,14 @@ namespace BluetoothExample
 
         Task<bool> DisconnectDevice();
 
+        //event EventHandler DiscoveredDevice;
+
+        event EventHandler<IDeviceInfoEventArgs> DiscoveredDevice;
+    }
+
+    public interface IDeviceInfoEventArgs
+    {
+        string DeviceName { get; set; }
+        string DeviceAddress { get; set; }
     }
 }
