@@ -34,6 +34,10 @@
 								<DataTemplate>
 									<ViewCell>
 										<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+											<Label Text="{Binding DeviceName}">
+											</Label>
+											<Label Text="{Binding DeviceAddress}">
+                                            </Label>
 										</StackLayout>
 									</ViewCell>
 								</DataTemplate>

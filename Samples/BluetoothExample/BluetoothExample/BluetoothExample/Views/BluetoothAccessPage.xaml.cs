@@ -21,8 +21,15 @@ namespace BluetoothExample
             allDevices = new List<AllBluetoothDevices>();
             bluetoothLEServices.DiscoveredDevice += async (object sender, IDeviceInfoEventArgs e) =>
             {
+                allDevices.Add(new AllBluetoothDevices()
+                {
+                    DeviceAddress = e.DeviceAddress,
+                    DeviceName = e.DeviceName
+                });
                 await FillDataToList();
             };
+
+            lvDisplay.ItemSelected += SelectedBluetoothDevice;
         }
 
         void StartCoreBluetoothClicked(object sender, EventArgs e)
@@ -76,13 +83,37 @@ namespace BluetoothExample
         {
             try
             {
-
+                lvDisplay.BeginRefresh();
+                lvDisplay.ItemsSource = allDevices;
             }
             catch (Exception ex)
             {
                 var msg = ex.Message;
+                System.Diagnostics.Debug.WriteLine("From Scanned Results Error : \n" + ex.StackTrace);
             }
+            lvDisplay.EndRefresh();
             return true;
+        }
+
+        void SelectedBluetoothDevice(object sender, SelectedItemChangedEventArgs e)
+        {
+            try
+            {
+                var deviceSelected = ((ListView)sender).SelectedItem as AllBluetoothDevices;
+                if (deviceSelected == null)
+                {
+                    return;
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                System.Diagnostics.Debug.WriteLine("From Scanned Results Error : \n" + ex.StackTrace);
+            }
         }
 
         public async Task<bool> DispayMessages(string message)
@@ -94,7 +125,7 @@ namespace BluetoothExample
 
     public class AllBluetoothDevices
     {
-        string DeviceName { get; set; }
-        string DeviceAddress { get; set; }
+        public string DeviceName { get; set; }
+        public string DeviceAddress { get; set; }
     }
 }

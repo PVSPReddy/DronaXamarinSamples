@@ -1,22 +1,29 @@
 ﻿<Properties StartupConfiguration="{53C01A5C-0E38-43EA-BBC6-80255DDB9494}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DependencyServices/BluetoothLEServices.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs">
     <Files>
-      <File FileName="BluetoothExample/Views/BluetoothAccessPage.xaml.cs" Line="36" Column="38" />
-      <File FileName="iOS/DependencyServices/BluetoothLEServices.cs" Line="15" Column="9" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml" Line="36" Column="30" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" Line="23" Column="20" />
+      <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" Line="159" Column="45" />
+      <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" Line="251" Column="9" />
+      <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" Line="23" Column="6" />
+      <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothCommonServices.cs" Line="42" Column="42" />
+      <File FileName="BluetoothExample/DependencyServices/IBluetoothCommon.cs" Line="18" Column="80" />
+      <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/DeviceInfoEventArgs.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.BluetoothExample.Droid PreferredExecutionTarget="Android.0123456789ABCDEF" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="94" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="128" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="136" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="135" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="73" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="79" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="84" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" relfile="Droid/DependencyServices/FromPlugin/BluetoothLEManager.cs" line="121" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" line="97" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" relfile="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" line="125" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" line="89" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" relfile="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" line="79" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" line="13" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" line="119" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" line="253" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" line="171" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

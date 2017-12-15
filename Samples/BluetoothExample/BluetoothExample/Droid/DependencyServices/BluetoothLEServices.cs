@@ -25,9 +25,9 @@ namespace BluetoothExample.Droid
         {
             //lemanager = BluetoothLEManager.Current;
             bluetoothLEManagers = new BluetoothLeManagers();
-            MessagingCenter.Subscribe<BluetoothLeManagers>(this, "above18", (obj) =>
+            MessagingCenter.Subscribe<BluetoothLeManagers, DeviceInfoEventArgs>(this, "above18", (sender, arg) =>
             {
-                var deviceInfo = obj.deviceInfoEventArgs;
+                var deviceInfo = arg;
                 DeviceInfoEventArgs deviceInfoEventArgs = new DeviceInfoEventArgs()
                 {
                     DeviceName = deviceInfo.DeviceName,
@@ -94,8 +94,35 @@ namespace BluetoothExample.Droid
             }
             return true;
         }
+
+        public async Task<bool> PairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
+        public async Task<bool> UnPairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
     }
 
+    /*
     public class DeviceInfoEventArgs : EventArgs, IDeviceInfoEventArgs
     {
         public string DeviceAddress { get; set; }
@@ -107,6 +134,7 @@ namespace BluetoothExample.Droid
         public BluetoothDevice BluetoothDeviceDiscovered { get; set; }
         public bool IsPaired { get; set; }
     }
+    */
 
     public class BluetoothLeManagers : Java.Lang.Object, BluetoothAdapter.ILeScanCallback
     {
@@ -178,6 +206,7 @@ namespace BluetoothExample.Droid
                 }
 
                 await Task.Delay(15000);
+                await GetPairedDevices();
                 StopScanningDevices();
             }
             catch (Exception ex)
@@ -228,6 +257,7 @@ namespace BluetoothExample.Droid
                 foreach (var bluetoothDevice in bluetoothDevices)
                 {
                     listPairedDevices.Add(bluetoothDevice);
+                    AddDeviceToList(bluetoothDevice);
                     System.Diagnostics.Debug.WriteLine("Paired/Bonded Device : \n" + bluetoothDevice.Name);
                     System.Console.WriteLine("Paired/Bonded Device : \n" + bluetoothDevice.Name);
                 }
@@ -237,6 +267,32 @@ namespace BluetoothExample.Droid
                 var msg = ex.Message;
             }
             return listPairedDevices;
+        }
+
+        public async Task<bool> PairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
+        public async Task<bool> UnPairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
         }
 
         /*
@@ -324,6 +380,60 @@ namespace BluetoothExample.Droid
                 System.Diagnostics.Debug.WriteLine("From Scanned Results Error : \n" + ex.StackTrace);
                 System.Console.WriteLine("From Scanned Results Error : \n" + ex.StackTrace);
             }
+        }
+
+
+        public async Task<bool> AddDeviceToList(BluetoothDevice device)
+        {
+            try
+            {
+                if (bluetoothDevicesCollected.Count <= 0)
+                {
+                    bluetoothDevicesCollected.Add(new BluetoothDevicesCollected()
+                    {
+                        BluetoothDeviceDiscovered = device,
+                        IsPaired = false
+                    });
+                    deviceInfoEventArgs = new DeviceInfoEventArgs()
+                    {
+                        DeviceName = device.Name,
+                        DeviceAddress = device.Address
+                    };
+                    MessagingCenter.Send<BluetoothLeManagers, DeviceInfoEventArgs>(this, "above18", deviceInfoEventArgs);
+                    System.Diagnostics.Debug.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                    System.Console.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                }
+                else
+                {
+                    var isDeviceAlreadyAdded = bluetoothDevicesCollected.Where(X => X.BluetoothDeviceDiscovered == device).Any();
+                    if (!isDeviceAlreadyAdded)
+                    {
+                        bluetoothDevicesCollected.Add(new BluetoothDevicesCollected()
+                        {
+                            BluetoothDeviceDiscovered = device,
+                            IsPaired = false
+                        });
+                        deviceInfoEventArgs = new DeviceInfoEventArgs()
+                        {
+                            DeviceName = device.Name,
+                            DeviceAddress = device.Address
+                        };
+                        MessagingCenter.Send(this, "above18", deviceInfoEventArgs);
+                        System.Diagnostics.Debug.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                        System.Console.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                        System.Console.WriteLine("From Scanned Results : \n" + device.Name + device.Address);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
         }
     }
 }

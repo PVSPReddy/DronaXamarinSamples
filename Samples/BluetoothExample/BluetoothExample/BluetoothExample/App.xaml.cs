@@ -8,7 +8,7 @@ namespace BluetoothExample
         {
             InitializeComponent();
 
-            MainPage = new BluetoothAccessPage();
+            MainPage = new BluetoothAccessCommonPage();
         }
 
         protected override void OnStart()

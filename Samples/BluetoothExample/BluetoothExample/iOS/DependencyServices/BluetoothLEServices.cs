@@ -130,6 +130,32 @@ namespace BluetoothExample.iOS
             }
             return true;
         }
+
+        public async Task<bool> PairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
+
+        public async Task<bool> UnPairSelectedDevice()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return true;
+        }
     }
 }
 
