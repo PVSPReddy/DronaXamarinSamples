@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{53C01A5C-0E38-43EA-BBC6-80255DDB9494}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs">
+﻿<Properties StartupConfiguration="{1B6A86EA-94F9-488D-83FF-B44B92D18C4F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs">
     <Files>
-      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml" Line="36" Column="30" />
-      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" Line="23" Column="20" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml" Line="1" Column="1" />
+      <File FileName="BluetoothExample/Views/BluetoothAccessCommonPage.xaml.cs" Line="24" Column="2" />
       <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerJellyBeanMrAndAbove.cs" Line="159" Column="45" />
       <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothLEManagerLollipopAndAbove.cs" Line="251" Column="9" />
       <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" Line="23" Column="6" />
@@ -11,7 +11,7 @@
       <File FileName="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/DeviceInfoEventArgs.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.BluetoothExample.Droid PreferredExecutionTarget="Android.0123456789ABCDEF" />
+  <MonoDevelop.Ide.ItemProperties.BluetoothExample.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
@@ -26,6 +26,7 @@
       <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/BluetoothExample/BluetoothExample/Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" relfile="Droid/DependencyServices/ToAccessAllVersionsOfAndroid/BluetoothPairingService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.BluetoothExample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.181B3DA1-30B6-4A59-9D79-331C3C344171" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>

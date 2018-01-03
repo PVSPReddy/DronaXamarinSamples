@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DynamicXAML.BaseXAMLPageOne">
+
+
+	<ContentPage.Resources>
+        <ResourceDictionary>
+			<ControlTemplate  x:Key="BaseXAMLPageOne">
+				<AbsoluteLayout BackgroundColor="#40000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+					<Grid x:Name="gridHeader" BackgroundColor="{TemplateBinding HeaderColor, Mode=TwoWay}" Padding="10,0,0,0" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+						<Grid.RowDefinitions> 
+							<RowDefinition Height="1*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+						</Grid.ColumnDefinitions>
+						<Button Text="Back" TextColor="White" FontSize="14" WidthRequest="60" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Clicked="BackClicked" >
+						</Button>
+						<Label x:Name="pageTitle" Text="{TemplateBinding TitleText, Mode=TwoWay}" FontAttributes="Bold" TextColor="White" FontSize="19" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+						</Label>
+						<Button Text="Next" TextColor="White" FontSize="14" WidthRequest="60" Grid.Row="0" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Clicked="SignOutClicked" >
+						</Button>
+					</Grid>
+					<StackLayout x:Name="stackBody" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+						<ContentPresenter>
+						</ContentPresenter>
+						<!--<Grid BackgroundColor="Transparent" Padding="20,20,20,0" RowSpacing="20" ColumnSpacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="1*"/>
+								<RowDefinition Height="1*"/>
+								<RowDefinition Height="1*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+							</Grid.ColumnDefinitions>
+						</Grid>
+						<StackLayout x:Name="stackFooter" Orientation="Horizontal" Padding="20,0,20,10" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+							<Image Source="UF.png" BackgroundColor="Transparent" HeightRequest="15" WidthRequest="15" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+							</Image>
+							<Image Source="F.png" BackgroundColor="Transparent" HeightRequest="15" WidthRequest="15" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+							</Image>
+						</StackLayout>-->
+					</StackLayout>
+				</AbsoluteLayout>
+			</ControlTemplate>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleImgHome" TargetType="Image">
+                <Setter Property="HeightRequest" Value="90" />
+				<Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="styleLblHome" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+			<Style x:Key="styleStackHome" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+	
+	<!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0" />
+            <On Platform="Android, WinPhone, Windows" Value="0,0,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>-->
+	
+    <!--<ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#40000000" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid x:Name="gridHeader" BackgroundColor="Transparent" Padding="10,0,0,0" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+				<Button Text="Back" TextColor="White" FontSize="14" WidthRequest="60" Grid.Row="0" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                </Button>
+                <Label x:Name="pageTitle" Text="Oxford Public School" FontAttributes="Bold" TextColor="White" FontSize="19" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                </Label>
+				<Button Text="Sign out" TextColor="White" FontSize="14" WidthRequest="60" Grid.Row="0" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                </Button>
+                
+            </Grid>
+
+            <StackLayout x:Name="stackBody" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<Grid BackgroundColor="Transparent" Padding="20,20,20,0" RowSpacing="20" ColumnSpacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+				</Grid>
+				<StackLayout x:Name="stackFooter" Orientation="Horizontal" Padding="20,0,20,10" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                    <Image Source="UF.png" BackgroundColor="Transparent" HeightRequest="15" WidthRequest="15" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                    </Image>
+                    <Image Source="F.png" BackgroundColor="Transparent" HeightRequest="15" WidthRequest="15" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>-->
+</ContentPage>

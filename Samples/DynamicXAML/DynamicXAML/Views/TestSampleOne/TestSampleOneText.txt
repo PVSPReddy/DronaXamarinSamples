@@ -1,0 +1,4 @@
+﻿Here I created a base page in XAML and using it in other layouts
+
+In this example I have shown how to create a Base page in Xaml and consume it in Csharp
+in comming examples we will we working on Xaml base page consuming through the another Xaml Page.
