@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{8CF1977B-B511-49DD-A070-CEA56CE8C371}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TelerikControlsSample/Views/TelerikListView/TelerikListViewSampleOne.xaml.cs">
+    <Files>
+      <File FileName="TelerikControlsSample/Views/TelerikListView/TelerikListViewSampleOne.xaml" Line="15" Column="1" />
+      <File FileName="TelerikControlsSample/Views/TelerikListView/TelerikListViewSampleOne.xaml.cs" Line="6" Column="1" />
+      <File FileName="TelerikControlsSample/App.xaml.cs" Line="10" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TelerikControlsSample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.TelerikControlsSample.iOS>
+  <MultiItemStartupConfigurations />
+</Properties>

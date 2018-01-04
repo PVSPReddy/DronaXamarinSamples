@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFF58E09-C984-4FDB-87AF-27AB645ACA20}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ListViewExample</RootNamespace>
+    <AssemblyName>ListViewExample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="ListViewExamplePage.xaml" />
+    <EmbeddedResource Include="Views\ListViewSampleOne\SampleOneLandingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListViewSampleOne\SampleOneListViewCSharp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListViewSampleOne\SampleOneListViewXAML.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewExamplePage.xaml.cs">
+      <DependentUpon>ListViewExamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ListViewSampleOne\SampleOneLandingPage.xaml.cs">
+      <DependentUpon>SampleOneLandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListViewSampleOne\SampleOneListViewCSharp.xaml.cs">
+      <DependentUpon>SampleOneListViewCSharp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListViewSampleOne\SampleOneListViewXAML.xaml.cs">
+      <DependentUpon>SampleOneListViewXAML.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JSONServiceLayer\JSONModels\GetCountriesCls.cs" />
+    <Compile Include="JSONServiceLayer\HttpClientSource.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\GetCountries.cs" />
+    <Compile Include="BAL\InterfaceLayer\IGetCountriesBAL.cs" />
+    <Compile Include="BAL\BusinessAccessLayer\GetCountriesBAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Views\Utilities\CountryData\Coun_Data.xml" />
+    <None Include="Views\Utilities\CountryData\CountriesData.csv" />
+    <None Include="Views\Utilities\CountryData\CountriesData.json" />
+    <None Include="Views\Utilities\CountryData\CountriesData.sql" />
+    <None Include="Views\Utilities\CountryData\CountriesData.xlsx" />
+    <None Include="Views\Utilities\CountryData\CountriesData.xml" />
+    <None Include="Views\Utilities\CountryData\CountryData.csv" />
+    <None Include="Views\Utilities\CountryData\CountryData.json" />
+    <None Include="Views\Utilities\CountryData\CountryData.sql" />
+    <None Include="Views\Utilities\CountryData\CountryData.xlsx" />
+    <None Include="Views\Utilities\CountryData\CountryData.xml" />
+    <None Include="Views\Utilities\CountryData\CountryData2.sql" />
+    <None Include="Views\Utilities\CountryData\UtilitiesInJsonFormat.txt" />
+    <None Include="Views\Utilities\CountryData\CountriesSimpleData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="CustomControls\" />
+    <Folder Include="Views\ListViewSampleOne\" />
+    <Folder Include="Views\Utilities\" />
+    <Folder Include="Views\Utilities\CountryData\" />
+    <Folder Include="BAL\" />
+    <Folder Include="JSONServiceLayer\" />
+    <Folder Include="JSONServiceLayer\JSONModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="BAL\InterfaceLayer\" />
+    <Folder Include="BAL\BusinessAccessLayer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>
