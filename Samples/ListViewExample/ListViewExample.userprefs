@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{89222D46-D794-4650-AE82-0240619B4468}|Default">
   <MonoDevelop.Ide.ItemProperties.ListViewExample.Droid PreferredExecutionTarget="Android.G090ME0671560AKK" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ListViewExample/Constants.cs">
     <Files>
       <File FileName="ListViewExample/Models/GetCountries.cs" Line="13" Column="32" />
-      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml" Line="20" Column="49" />
-      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" Line="61" Column="50" />
+      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml" Line="34" Column="1" />
+      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" Line="8" Column="1" />
       <File FileName="ListViewExample/App.xaml.cs" Line="10" Column="35" />
       <File FileName="ListViewExample/BAL/BusinessAccessLayer/GetCountriesBAL.cs" Line="31" Column="35" />
       <File FileName="ListViewExample/JSONServiceLayer/HttpClientSource.cs" Line="70" Column="1" />
+      <File FileName="ListViewExample/Constants.cs" Line="10" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/ListViewExample/ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" relfile="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" line="106" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/ListViewExample/ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" relfile="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" line="74" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/ListViewExample/ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" relfile="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" line="130" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/ListViewExample/ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" relfile="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" line="85" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/ListViewExample/ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" relfile="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" line="99" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

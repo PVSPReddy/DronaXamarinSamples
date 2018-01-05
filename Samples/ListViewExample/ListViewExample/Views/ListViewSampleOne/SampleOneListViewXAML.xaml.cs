@@ -12,7 +12,7 @@ namespace ListViewExample.Views.ListViewSampleOne
     {
         List<CountryDetails> listEmployeeData, temporarylistEmployeeData;
 
-        int loadingRepitation = 0;
+        int loadingRepitation = 0, totalLoadingRepitationRequired, allowedNumberOfItems = 20;
         public SampleOneListViewXAML()
         {
             listEmployeeData = new List<CountryDetails>();
@@ -43,30 +43,41 @@ namespace ListViewExample.Views.ListViewSampleOne
                     var itemAppeared = e.Item as CountryDetails;
                     var itemAppearedIndex = listEmployeeData.IndexOf(itemAppeared);
                     System.Diagnostics.Debug.WriteLine(itemAppearedIndex.ToString());
-                    if(itemAppearedIndex == ((loadingRepitation*20)-1))
+                    if(itemAppearedIndex == ((loadingRepitation*allowedNumberOfItems)-1))
                     {
                         bool isItemAlreadyPresent = true;
-                        for (int i = loadingRepitation * 20; i < ((loadingRepitation + 1) * 20); i++)
+
+                        for (int i = loadingRepitation * allowedNumberOfItems; i < ((loadingRepitation + 1) * allowedNumberOfItems); i++)
                         {
-                            isItemAlreadyPresent = temporarylistEmployeeData.Contains(listEmployeeData[i]);
-                            if (!isItemAlreadyPresent)
+                            if (i < listEmployeeData.Count)
                             {
-                                temporarylistEmployeeData.Add(listEmployeeData[i]);
-                            }
-                            else
-                            {
-                                
+                                isItemAlreadyPresent = temporarylistEmployeeData.Contains(listEmployeeData[i]);
+                                if (!isItemAlreadyPresent)
+                                {
+
+                                    temporarylistEmployeeData.Add(listEmployeeData[i]);
+                                }
+                                else
+                                {
+
+                                }
                             }
                         }
-                        if(!isItemAlreadyPresent)
+                        var UpdatedList = new List<CountryDetails>();
+                        if (!isItemAlreadyPresent)
                         {
+                            foreach (var item in temporarylistEmployeeData)
+                            {
+                                UpdatedList.Add(item);
+                            }
                             loadingRepitation += 1;
+                            //}
+                            listViewDataDisplay.BeginRefresh();
+                            listViewDataDisplay.ItemsSource = UpdatedList;//temporarylistEmployeeData;
+                            await Task.Delay(1000);
+                            listViewDataDisplay.ScrollTo(itemAppeared, ScrollToPosition.MakeVisible, false);
+                            listViewDataDisplay.EndRefresh();
                         }
-                        listViewDataDisplay.BeginRefresh();
-                        listViewDataDisplay.ItemsSource = temporarylistEmployeeData;
-                        await Task.Delay(1000);
-                        listViewDataDisplay.ScrollTo(itemAppeared, ScrollToPosition.MakeVisible, false);
-                        listViewDataDisplay.EndRefresh();
                     }
                 }
                 catch(Exception ex)
@@ -77,6 +88,18 @@ namespace ListViewExample.Views.ListViewSampleOne
 
         }
 
+        public void GetNoOfCyclesRequired(int totalNoOfItems)
+        {
+            try
+            {
+                totalLoadingRepitationRequired = totalNoOfItems / allowedNumberOfItems;
+            }
+            catch(Exception ex)
+            {
+                var msg = ex.Message;
+            }
+        }
+
         public async void GetCountriesList()
         {
             try
@@ -84,7 +107,7 @@ namespace ListViewExample.Views.ListViewSampleOne
                 using(IGetCountriesBAL getCountries = new GetCountriesBAL())
                 {
                     var getCountriesResp = await getCountries.GetAllCountryDetails();
-                    for (int i = 0; i < 20; i++ )
+                    for (int i = 0; i < allowedNumberOfItems; i++ )
                     {
                         temporarylistEmployeeData.Add(getCountriesResp.CountryDetails[i]);
                     }
@@ -94,6 +117,7 @@ namespace ListViewExample.Views.ListViewSampleOne
                     {
                         listEmployeeData = getCountriesResp.CountryDetails;
                         //listViewDataDisplay.ItemsSource = listEmployeeData;
+                        GetNoOfCyclesRequired(listEmployeeData.Count);
                     }
                     else
                     {
