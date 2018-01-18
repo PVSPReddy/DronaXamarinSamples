@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{80C0313F-C8C5-45D6-842A-26A545715464}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Calibrations/Views/PunchCardCalibrations.xaml.cs">
+    <Files>
+      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml" Line="29" Column="39" />
+      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml.cs" Line="27" Column="55" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Calibrations.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0EC9017F-1467-48BE-B0B8-04F6068667F2">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.Calibrations.iOS>
+  <MultiItemStartupConfigurations />
+</Properties>
