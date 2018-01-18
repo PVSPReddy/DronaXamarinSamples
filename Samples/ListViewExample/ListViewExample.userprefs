@@ -1,16 +1,6 @@
-﻿<Properties StartupConfiguration="{89222D46-D794-4650-AE82-0240619B4468}|Default">
+﻿<Properties StartupConfiguration="{52293C65-BF99-48CC-B334-4B621CC2BE60}|Default">
   <MonoDevelop.Ide.ItemProperties.ListViewExample.Droid PreferredExecutionTarget="Android.G090ME0671560AKK" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ListViewExample/Constants.cs">
-    <Files>
-      <File FileName="ListViewExample/Models/GetCountries.cs" Line="13" Column="32" />
-      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml" Line="34" Column="1" />
-      <File FileName="ListViewExample/Views/ListViewSampleOne/SampleOneListViewXAML.xaml.cs" Line="8" Column="1" />
-      <File FileName="ListViewExample/App.xaml.cs" Line="10" Column="35" />
-      <File FileName="ListViewExample/BAL/BusinessAccessLayer/GetCountriesBAL.cs" Line="31" Column="35" />
-      <File FileName="ListViewExample/JSONServiceLayer/HttpClientSource.cs" Line="70" Column="1" />
-      <File FileName="ListViewExample/Constants.cs" Line="10" Column="31" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Calibrations.Views.PunchCardCalibrations">
+    
+	<ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Label Text="&lt;==" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButtonTapped"/> 
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="PunchCardPage" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+                    
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,30,20,0">
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout>
+                            <Label x:Name="labelDataDisplay">
+                            </Label>
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout>
+                        <Button Text="Submit" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="SubmitClicked">
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>
