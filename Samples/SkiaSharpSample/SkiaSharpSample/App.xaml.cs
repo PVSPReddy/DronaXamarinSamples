@@ -1,7 +1,6 @@
-﻿using Calibrations.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace Calibrations
+namespace SkiaSharpSample
 {
     public partial class App : Application
     {
@@ -9,7 +8,7 @@ namespace Calibrations
         {
             InitializeComponent();
 
-            MainPage = new PunchCardCalibrations();
+            MainPage = new SkiaSharpSamplePage();
         }
 
         protected override void OnStart()

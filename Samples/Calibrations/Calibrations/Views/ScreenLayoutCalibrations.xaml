@@ -2,7 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="Calibrations.Views.PunchCardCalibrations">
+    x:Class="Calibrations.Views.ScreenLayoutCalibrations">
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -11,7 +11,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     
-	<ContentPage.Content>
+    <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
@@ -37,11 +37,15 @@
                     </ScrollView>
                     <StackLayout>
                         <StackLayout>
-                            <Entry x:Name="entryStartNumber" Placeholder="Enter Start Number">
+                            <Entry x:Name="entryControlHeight" Placeholder="Enter Start Number">
                             </Entry>
-                            <Entry x:Name="entryEndNumber" Placeholder="Enter End Number">
+                            <Entry x:Name="entryControlWidth" Placeholder="Enter End Number">
                             </Entry>
-                            <Entry x:Name="entryValidCellsNumber" Placeholder="Enter No of Columns or Rows">
+                            <Picker x:Name="pickerScreenSizes" Placeholder="Enter No of Columns or Rows">
+                            </Picker>
+                            <Entry x:Name="entryScreenHeight" Placeholder="Enter Start Number">
+                            </Entry>
+                            <Entry x:Name="entryScreenWidth" Placeholder="Enter End Number">
                             </Entry>
                         </StackLayout>
                         <Button Text="Submit" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="SubmitClicked">
@@ -50,5 +54,5 @@
                 </StackLayout>
             </StackLayout>
         </AbsoluteLayout>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

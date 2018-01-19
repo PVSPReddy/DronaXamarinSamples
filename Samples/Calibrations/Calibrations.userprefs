@@ -1,8 +1,11 @@
-﻿<Properties StartupConfiguration="{80C0313F-C8C5-45D6-842A-26A545715464}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Calibrations/Views/PunchCardCalibrations.xaml.cs">
+﻿<Properties StartupConfiguration="{F7B53B7F-31F2-4EE9-A883-DDF494CD0D60}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Calibrations/Views/ScreenLayoutCalibrations.xaml.cs">
     <Files>
-      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml" Line="29" Column="39" />
-      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml.cs" Line="27" Column="55" />
+      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml" Line="45" Column="17" />
+      <File FileName="Calibrations/Views/PunchCardCalibrations.xaml.cs" Line="58" Column="29" />
+      <File FileName="Calibrations/App.xaml.cs" Line="7" Column="6" />
+      <File FileName="Calibrations/Views/ScreenLayoutCalibrations.xaml" Line="42" Column="61" />
+      <File FileName="Calibrations/Views/ScreenLayoutCalibrations.xaml.cs" Line="20" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -10,6 +13,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Calibrations.Droid PreferredExecutionTarget="Android.G090ME0671560AKK" />
   <MonoDevelop.Ide.ItemProperties.Calibrations.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0EC9017F-1467-48BE-B0B8-04F6068667F2">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.Calibrations.iOS>
