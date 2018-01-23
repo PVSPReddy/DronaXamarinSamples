@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="CustomControls\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -119,6 +120,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="CustomControls\XamCustomRoundCornerLayoutRender.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\imgUnChecked%402x.png" />

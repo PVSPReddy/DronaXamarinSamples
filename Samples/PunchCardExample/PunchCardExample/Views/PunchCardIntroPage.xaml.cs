@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using PunchCardExample.Views;
 using Xamarin.Forms;
 
 namespace PunchCardExample
@@ -16,6 +16,9 @@ namespace PunchCardExample
         {
             try
             {
+                Navigation.PushModalAsync(new PunchCardTest());
+
+                /*
                 int outValue = 0;
                 if (string.IsNullOrEmpty(entryPunchesRequired.Text))
                 {
@@ -45,6 +48,7 @@ namespace PunchCardExample
                     int puncheHeight = (string.IsNullOrEmpty(entryPunchHeight.Text)) ? 30 : Convert.ToInt32(entryPunchHeight.Text);
                     Navigation.PushModalAsync(new PunchCardTestPage(punchesRequired, punchesFilled, punchesColumnLimitTo, puncheHeight));
                 }
+                */
             }
             catch (Exception ex)
             {

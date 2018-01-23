@@ -36,6 +36,7 @@
     <EmbeddedResource Include="Views\PunchCardIntroPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PunchCardTest.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -54,6 +55,11 @@
     </Compile>
     <Compile Include="CustomControls\PunchCardTwo.cs" />
     <Compile Include="CustomControls\PunchCardThree.cs" />
+    <Compile Include="CustomControls\PunchCardFour.cs" />
+    <Compile Include="Utilities\MatrixLayoutArrangement.cs" />
+    <Compile Include="CustomControls\XamCustomRoundCornerLayout.cs" />
+    <Compile Include="Views\PunchCardTest.xaml.cs" />
+    <Compile Include="CustomControls\PunchCardFive.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -72,6 +78,7 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="CustomControls\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

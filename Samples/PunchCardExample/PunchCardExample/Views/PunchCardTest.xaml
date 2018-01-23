@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:Xam="clr-namespace:PunchCardExample;assembly=PunchCardExample"
+    x:Class="PunchCardExample.Views.PunchCardTest">
+
+    
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Label Text="&lt;==" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButtonTapped"/> 
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="PunchCardPage" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+                    
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20,30,20,0">
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <StackLayout x:Name="StackPunchHolder" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20,30,20,0">
+                            <Xam:PunchCardFour x:Name="data" IsRoundCell = "true" ShallSetDefaultPunch = "false" PunchCellHeight = "20" PunchCellWidth = "20" PunchLayoutHeight = "200" PunchLayoutWidth = "200" PunchCellSpacing = "10" ShallSetDefaultPunched = "true" >
+                                <!--<Xam:XamPunchCard.ConstructorParameters>
+                                    <Int32>20</Int32>
+                                    <Int32>6</Int32>
+                                </Xam:XamPunchCard.ConstructorParameters>-->
+                                <!--<Xam:XamPunchCard.ConstructorParameters>
+                                    <x:Arguments>
+                                        <x:Int32>20</x:Int32>
+                                        <x:Int32>6</x:Int32>
+                                    </x:Arguments>
+                                </Xam:XamPunchCard.ConstructorParameters>-->
+                                <x:Arguments>
+                                    <x:Int32>20</x:Int32>
+                                    <x:Int32>6</x:Int32>
+                                </x:Arguments>
+                            </Xam:PunchCardFour>
+                        </StackLayout>
+                        
+                        <StackLayout x:Name="StackPunchHolderTwo" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20,30,20,0">
+                        </StackLayout>
+                </StackLayout>
+                        
+                        </ScrollView>
+<!--                    <Label x:Name="lblObtainedData" ></Label>-->
+                </StackLayout>
+            </StackLayout>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
