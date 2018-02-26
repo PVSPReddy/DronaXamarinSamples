@@ -121,6 +121,7 @@
     <Compile Include="DependencyServices\IEmailService.cs" />
     <Compile Include="DependencyServices\IPdfViewService.cs" />
     <Compile Include="CustomControls\MyWebViewRender.cs" />
+    <Compile Include="DependencyServices\DownloadImageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

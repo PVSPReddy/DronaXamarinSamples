@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FileDownloaderExample.ImageDownloadDisplay">
+    
+	<ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.8" BackgroundColor="Yellow" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image x:Name="imageDisplay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </Image>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <StackLayout x:Name="stackImageListView" BackgroundColor="Blue" IsVisible="false" AbsoluteLayout.LayoutBounds="0,0,1,0.8" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ListView x:Name="listViewImageData" ItemSelected="SelectedImage" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout BackgroundColor="Maroon" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding ImageName}" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    </Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.2" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="Teal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Entry x:Name="entryImageURL" Placeholder="Enter Image URL" HorizontalOptions="FillAndExpand">
+                    </Entry>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                        <Button Text="Download" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="DownloadImageClicked">
+                        </Button>
+                        <Button x:Name="BtnShowAll" Text="Show All" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="ShowFolderClicked">
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+            
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

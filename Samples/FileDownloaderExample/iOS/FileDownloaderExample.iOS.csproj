@@ -126,6 +126,7 @@
     <Compile Include="DependencyServices\IdownloadService.cs" />
     <Compile Include="DependencyServices\IEmailService.cs" />
     <Compile Include="DependencyServices\IPdfViewService.cs" />
+    <Compile Include="DependencyServices\DownloadImageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Download.pdf" />

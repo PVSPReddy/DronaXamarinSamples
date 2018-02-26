@@ -9,7 +9,7 @@ namespace FileDownloaderExample
         {
             InitializeComponent();
 
-            MainPage = new DownloadPage();
+            MainPage = new ImageDownloadDisplay();
         }
 
         protected override void OnStart()
