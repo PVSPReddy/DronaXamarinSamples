@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FileDownloaderExample.FoldersList">
+	<ContentPage.Content>
+		<!--<StackLayout>
+			<ListView x:Name="foldersList" >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+								<StackLayout x:Name="stack" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+									<Label x:Name="lblfilename" Text="{Binding file_Name}"/>
+								</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+
+			</ListView>
+		</StackLayout>-->
+	</ContentPage.Content>
+</ContentPage>

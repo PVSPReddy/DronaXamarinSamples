@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:FileDownloaderExample;assembly=FileDownloaderExample"
+		x:Class="FileDownloaderExample.DisplayDownloaded">
+	<ContentPage.Content>
+		<!--<StackLayout x:Name="holder" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<StackLayout x:Name="stack" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<WebView x:Name="web_page" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				</WebView>
+				<local:MyWebView x:Name="web_page" Uri="Download.Pdf" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				</local:MyWebView>
+			</StackLayout>
+		</StackLayout>-->
+	</ContentPage.Content>
+</ContentPage>

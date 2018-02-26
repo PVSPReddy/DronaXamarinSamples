@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FileDownloaderExample.DownloadPage">
+	<ContentPage.Content>
+		<StackLayout x:Name="holder" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<StackLayout x:Name="stack" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+				<Entry x:Name="UrlHolder" Placeholder="Place An Url" PlaceholderColor="Green" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+				</Entry>
+				<Entry x:Name="fileNameHolder" Placeholder="Enter File Name" PlaceholderColor="Green" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+				</Entry>
+				<Grid BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "Auto"/>
+						<RowDefinition Height = "Auto"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "Auto"/>
+						<ColumnDefinition Width = "Auto"/>
+					</Grid.ColumnDefinitions>
+					<Button x:Name="Submit" Text="Submit" TextColor="Green" BackgroundColor="Gray" Clicked="SubmitClicked" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+					</Button>
+					<Button x:Name="Display" Text="Display" TextColor="Green" BackgroundColor="Gray" Clicked="DisplayClicked" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+					</Button>
+					<Button x:Name="folderView" Text="folderView" TextColor="Green" BackgroundColor="Gray" Clicked="FolderViewClicked" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+					</Button>
+				</Grid>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
