@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:DynamicXAML;assembly=DynamicXAML"
+             x:Class="DynamicXAML.HomePageViewCell">
+    <ViewCell.View>
+        <StackLayout BackgroundColor="Transparent" Padding="10,10,10,10" HeightRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=15}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            
+            <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=12}"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=12}"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout HeightRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=12}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Padding="5,5,5,5">
+                    <Image Source="Avatar1.png" HeightRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" WidthRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    </Image>
+                </StackLayout>
+                
+                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="{Binding LocationName}" TextColor="Black" BackgroundColor="Transparent" LineBreakMode="TailTruncation" FontSize="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=2.5}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Label>
+                    <Label Text="{Binding DateOfMemory, StringFormat= 'Date of Memory : {0}'}" TextColor="Black" BackgroundColor="Transparent" FontSize="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=1.8}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Label>
+                    <Label Text="{Binding CompanionsNoCount, StringFormat= 'Companions Count : {0}'}" TextColor="Black" BackgroundColor="Transparent" FontSize="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=1.8}" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Label>
+                </StackLayout>
+                
+                <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" Padding="5,5,5,5">
+                    <local:CustomLayout StartColor="Maroon" EndColor="Maroon" GradientDirection="Horizontal" HeightRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" WidthRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" CornerWRT="WRTHeightRequest" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="=" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        </Label>
+                    </local:CustomLayout>
+                </StackLayout>
+                <BoxView Grid.Row="0" Grid.Column="2" Color="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="AddMemoryToPerson" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>-->
+
+            </Grid>
+            
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

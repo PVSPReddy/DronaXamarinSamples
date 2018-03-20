@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SocialMediaAccess.Views.SampleOne.IntroPage">
+
+    
+	<ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout x:Name="stackHeader" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label x:Name="lblPageHeading" Text="GoogleDrive" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="stackBody" AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Picker Title="Select a Social Media Website" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Picker>
+                    <Entry x:Name="entryNewKey" Text="K7ny27JTpKVsTgdyLdDfmQQWVLERj2zAK5BslRsqyw" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Entry>
+                    <Button x:Name="buttonSubmit" Text="SUBMIT" Clicked="SubmitClicked">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="stackAccessPopUp" IsVisible="false" AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Label Text="Close">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ClosePopupTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <WebView x:Name="webView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    </WebView>
+                    
+                </StackLayout>
+            </StackLayout>
+            
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

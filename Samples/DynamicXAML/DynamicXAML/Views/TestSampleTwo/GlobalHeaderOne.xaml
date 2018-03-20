@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:DynamicXAML;assembly=DynamicXAML"
+    x:Class="DynamicXAML.GlobalHeaderOne">
+
+    <!--<ContentView.Resources>
+        <ResourceDictionary>
+            <x:Static x:Key="MyConstString" Value="{Binding NaviImage}" />
+        </ResourceDictionary>
+    </ContentView.Resources>-->
+    
+    <ContentView.Content>
+        <Grid BackgroundColor="{DynamicResource HeaderBackGroundColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelNaviText" Text="{Binding NaviImage}" TextColor="Black" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenNavigationMenu" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="labelPageTitle" Text="{Binding PageTitle}" TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            </Label>
+            <Label x:Name="labelThirdButton" Text="&#x002B;" TextColor="Black" IsVisible="{Binding ShowThirdButton}" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="AddMemoryClick"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:DynamicXAML;assembly=DynamicXAML"
+    x:Class="DynamicXAML.HomePageTestTwo"
+    Title="HomePage" Icon="null"
+    x:Name="thisPage">
+
+
+
+    <!--<ContentPage.BindingContext>
+        <local:HomePageViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="HeadingTextColor">Black</Color>
+            <Color x:Key="NormalTextColor">Blue</Color>
+<!--            <x:Double x:Key="AppBorderSize"></x:Double>-->
+            <Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+
+                <local:GlobalHeaderOne BindingContext="{x:Reference thisPage}" NaviImage="icon.png" PageTitle="{Binding PageTitle}" >
+                    <x:Arguments>
+                        <x:Boolean>true</x:Boolean>
+                    </x:Arguments>
+                </local:GlobalHeaderOne>
+                
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                    <ListView x:Name="listViewCompanions" RowHeight="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=15}" ItemsSource="{Binding MemoriesData}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <!--<ListView.ItemsSource>
+                        </ListView.ItemsSource>-->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <local:HomePageViewCell >
+                                    
+                                </local:HomePageViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+            <!--<StackLayout BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.88,0.88,0.2,0.12" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Padding="5,5,5,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <local:CustomLayout StartColor="Maroon" EndColor="Maroon" GradientDirection="Horizontal" HeightRequest="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=10}" WidthRequest="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=10}" CornerWRT="WRTWidthRequest" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="+" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        </Label>
+                    </local:CustomLayout>
+                </StackLayout>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
+

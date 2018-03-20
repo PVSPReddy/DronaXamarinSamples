@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basePage:BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:DynamicXAML;assembly=DynamicXAML"
+    xmlns:basePage="clr-namespace:DynamicXAML;assembly=DynamicXAML"
+    x:Class="DynamicXAML.HomePageTest"
+    Title="HomePage" Icon="null"
+    x:Name="currentPage">
+    
+	<!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="HeadingTextColor">Black</Color>
+            <Color x:Key="NormalTextColor">Blue</Color>-->
+<!--            <x:Double x:Key="AppBorderSize"></x:Double>-->
+            <!--<Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    
+<!--    <ContentPage.Content>-->
+
+
+    <basePage:BasePage.CurrentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+<!--<ContentView ControlTemplate="{StaticResource TealTemplate}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+
+<!--    <ContentView x:Name="bodyContent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+    <StackLayout x:Name="bodyStack" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <ListView x:Name="listViewCompanions" RowHeight="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=15}" ItemsSource="{Binding MemoriesData}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <local:HomePageViewCell >
+                            </local:HomePageViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+<!--        </ContentView>-->
+    
+<!--</ContentView>-->
+    </basePage:BasePage.CurrentView>
+<!--    </ContentPage.Content>-->
+</basePage:BasePage>

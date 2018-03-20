@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DynamicXAML.BasePage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<ControlTemplate x:Key="TealTemplate">
+                <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+                        <Grid BackgroundColor="{DynamicResource HeaderBackGroundColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding NaviImage}" TextColor="Black" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenNavigationMenu" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="{Binding PageTitle}" TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            </Label>
+                            <Label Text="&#x002B;" IsVisible="{Binding ShowThirdButton}" TextColor="Black" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AddMemoryClick}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                        <ContentPresenter>
+                        </ContentPresenter>
+                    </StackLayout>
+                </AbsoluteLayout>
+            </ControlTemplate>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+	<ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All">
+
+                <Grid BackgroundColor="{DynamicResource HeaderBackGroundColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="NaviImageValue" Text="{Binding NaviImage}" TextColor="Black" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenNavigationMenu" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="PageTitleValue" Text="{Binding PageTitle}" TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    </Label>
+                    <Label x:Name="AddButtonValue" Text="&#x002B;" IsVisible="{Binding ShowThirdButton}" TextColor="Black" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding AddMemoryClick}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <!--&#x002B   2795   Tapped="AddNewMemory"-->
+                    <!--<StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5,5,5,5">
+                        <local:CustomLayout StartColor="Maroon" EndColor="Maroon" GradientDirection="Horizontal" HeightRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" WidthRequest="{Binding Converter={StaticResource HeightConverter}, ConverterParameter=10}" CornerWRT="WRTHeightRequest" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="+" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            </Label>
+                        </local:CustomLayout>
+                    </StackLayout>-->
+                </Grid>
+                
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All">
+                <ContentView x:Name="stackDynamicBody" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    
+                </ContentView>
+            </StackLayout>
+
+            <!--<StackLayout BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.88,0.88,0.2,0.12" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Padding="5,5,5,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <local:CustomLayout StartColor="Maroon" EndColor="Maroon" GradientDirection="Horizontal" HeightRequest="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=10}" WidthRequest="{Binding Converter={StaticResource WidthConverter}, ConverterParameter=10}" CornerWRT="WRTWidthRequest" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="+" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        </Label>
+                    </local:CustomLayout>
+                </StackLayout>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
