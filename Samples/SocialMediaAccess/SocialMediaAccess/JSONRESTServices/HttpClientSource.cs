@@ -19,13 +19,13 @@ namespace SocialMediaAccess
 			client.BaseAddress = new Uri(Constants.Apiurl);
 			client.DefaultRequestHeaders.Accept.Clear();
 
-            client.DefaultRequestHeaders.Add("oauth_nonce", Constants.oauth_nonce);
-            client.DefaultRequestHeaders.Add("callBackURL", Constants.callBackURL);
-            client.DefaultRequestHeaders.Add("oauth_signature_method", Constants.oauth_signature_method);
-            client.DefaultRequestHeaders.Add("oauth_timestamp", Constants.oauth_timestamp);
-            client.DefaultRequestHeaders.Add("oauth_consumer_key", Constants.oauth_consumer_key);
+            //client.DefaultRequestHeaders.Add("oauth_nonce", Constants.oauth_nonce);
+            //client.DefaultRequestHeaders.Add("callBackURL", Constants.callBackURL);
+            //client.DefaultRequestHeaders.Add("oauth_signature_method", Constants.oauth_signature_method);
+            //client.DefaultRequestHeaders.Add("oauth_timestamp", Constants.oauth_timestamp);
+            //client.DefaultRequestHeaders.Add("oauth_consumer_key", Constants.oauth_consumer_key);
 
-            client.DefaultRequestHeaders.Add("oauth_version", Constants.oauth_version);
+            //client.DefaultRequestHeaders.Add("oauth_version", Constants.oauth_version);
             /*
 			client.DefaultRequestHeaders.Add("X-Parse-Application-Id", Constants.ApplicationID);
 			client.DefaultRequestHeaders.Add("X-Parse-REST-API-Key", Constants.ApiKey);
@@ -40,17 +40,26 @@ namespace SocialMediaAccess
 
         public static async Task<T> RetriveTwitterDataWithPostAsync(string methodName)
         {
-            //var jsonString = JsonConvert.SerializeObject("{}"); 
-            //var postData = new StringContent("");
-            client.DefaultRequestHeaders.Add("oauth_signature", methodName);
-            var postData = new StringContent("", Encoding.UTF8, "application/json");
             T t = null;
-            HttpResponseMessage response = await client.PostAsync("", postData);
-            response.EnsureSuccessStatusCode();
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var str = await response.Content.ReadAsStringAsync();
-                t = JsonConvert.DeserializeObject<T>(str);
+                //var jsonString = JsonConvert.SerializeObject("{}"); 
+                //var postData = new StringContent("");
+                client.DefaultRequestHeaders.Add("Authorization", methodName);
+                var postData = new StringContent("", Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync("/oauth/request_token", postData);
+                response.EnsureSuccessStatusCode();
+                if (response.IsSuccessStatusCode)
+                {
+                    var str = await response.Content.ReadAsStringAsync();
+                    t = JsonConvert.DeserializeObject<T>(str);
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message + "\n " + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
             }
             return t;
         }

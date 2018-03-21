@@ -33,6 +33,35 @@
     <EmbeddedResource Include="Views\TestSampleOne\BaseXAMLPageOne.xaml" />
     <EmbeddedResource Include="Views\TestSampleOne\TestXAMLOne.xaml" />
     <EmbeddedResource Include="Views\TestSampleOne\TestXAMLTwo.xaml" />
+    <EmbeddedResource Include="Views\TestSampleTwo\BaseContentPage.xaml" />
+    <EmbeddedResource Include="Views\TestSampleTwo\GlobalHeaderOne.xaml" />
+    <EmbeddedResource Include="Views\TestSampleTwo\HomePageTest.xaml" />
+    <EmbeddedResource Include="Views\TestSampleTwo\HomePageViewCell.xaml" />
+    <EmbeddedResource Include="Views\TestSampleTwo\HomePage.xaml" />
+    <EmbeddedResource Include="Views\TestSampleThree\BasePageXamlOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestSampleThree\BasePageXamlTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestSampleThree\BasePageXamlThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestSampleThree\BasePageXamlTemplateOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestSampleTwo\HomePageTestTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -45,16 +74,44 @@
     <Compile Include="Views\TestSampleOne\BaseXAMLPageOne.xaml.cs" />
     <Compile Include="Views\TestSampleOne\TestXAMLOne.xaml.cs" />
     <Compile Include="Views\TestSampleOne\TestXAMLTwo.xaml.cs" />
+    <Compile Include="Views\TestSampleTwo\BaseContentPage.xaml.cs" />
+    <Compile Include="Views\TestSampleTwo\GlobalHeaderOne.xaml.cs" />
+    <Compile Include="Views\TestSampleTwo\HomePage.xaml.cs" />
+    <Compile Include="Views\TestSampleTwo\HomePageTest.xaml.cs" />
+    <Compile Include="ValueConverters\HeightConverter.cs" />
+    <Compile Include="ValueConverters\WidthConverter.cs" />
+    <Compile Include="ValueConverters\TextToUniCodeSymbolCoverter.cs" />
+    <Compile Include="Views\TestSampleTwo\HomePageViewModel.cs" />
+    <Compile Include="Views\TestSampleTwo\BaseViewModel.cs" />
+    <Compile Include="Views\TestSampleTwo\HomePageViewCell.xaml.cs" />
+    <Compile Include="Views\TestSampleThree\BasePageXamlOne.xaml.cs">
+      <DependentUpon>BasePageXamlOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestSampleThree\BasePageXamlTwo.xaml.cs">
+      <DependentUpon>BasePageXamlTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestSampleThree\BasePageXamlThree.xaml.cs">
+      <DependentUpon>BasePageXamlThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestSampleThree\BasePageXamlTemplateOne.xaml.cs">
+      <DependentUpon>BasePageXamlTemplateOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestSampleTwo\HomePageTestTwo.xaml.cs">
+      <DependentUpon>HomePageTestTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +121,9 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Views\TestSampleOne\" />
+    <Folder Include="Views\TestSampleTwo\" />
+    <Folder Include="ValueConverters\" />
+    <Folder Include="Views\TestSampleThree\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

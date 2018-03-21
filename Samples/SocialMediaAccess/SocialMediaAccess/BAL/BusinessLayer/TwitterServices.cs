@@ -55,7 +55,8 @@ namespace SocialMediaAccess
             }
             catch (Exception ex)
             {
-                var msg = ex.Message;
+                var msg = ex.Message + "\n " + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
             }
             return responseStr;
         }

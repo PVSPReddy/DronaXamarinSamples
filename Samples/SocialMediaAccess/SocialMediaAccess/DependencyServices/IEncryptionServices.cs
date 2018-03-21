@@ -8,5 +8,7 @@ namespace SocialMediaAccess
         Task<string> GetSHA1EncryptedString(string strConvert);
 
         Task<string> GetHMACSHA1EncryptedString(string data, string key);
+
+        Task<DateTime> GetNTPTime();
     }
 }

@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using SocialMediaAccess.Views.SampleOne;
+using Xamarin.Forms;
 
 namespace SocialMediaAccess
 {
@@ -7,8 +9,14 @@ namespace SocialMediaAccess
         public App()
         {
             InitializeComponent();
-
-            MainPage = new SocialMediaAccessPage();
+            try
+            {
+                MainPage = new IntroPage();
+            }
+            catch(Exception ex)
+            {
+                var msg = ex.Message;
+            }
         }
 
         protected override void OnStart()

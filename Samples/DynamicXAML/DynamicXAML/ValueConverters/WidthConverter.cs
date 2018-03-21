@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace DigitalAlbum.ValueConverters
+namespace DynamicXAML.ValueConverters
 {
     class WidthConverter : IValueConverter
     {
         public static int ScreenWidth;
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            ScreenWidth = BaseContentPage.screenHeight;
+            ScreenWidth = App.screenHeight;
             double percentWidth = 0.0;
             try
             {

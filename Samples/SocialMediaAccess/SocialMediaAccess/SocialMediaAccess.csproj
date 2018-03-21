@@ -34,6 +34,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SampleOne\IntroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -47,6 +51,15 @@
       <DependentUpon>GoogleDriveAccessPageOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AccessTokens.cs" />
+    <Compile Include="Views\SampleOne\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyServices\IEncryptionServices.cs" />
+    <Compile Include="JSONRESTServices\HttpClientSource.cs" />
+    <Compile Include="JSONRESTServices\Constants.cs" />
+    <Compile Include="BAL\BusinessLayer\TwitterServices.cs" />
+    <Compile Include="BAL\InterfaceLayer\ITwitterServices.cs" />
+    <Compile Include="BAL\BusinessLayer\IWebClientServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -58,6 +71,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -66,6 +82,12 @@
     <Folder Include="Views\" />
     <Folder Include="Views\GoogleAccess\" />
     <Folder Include="Views\GoogleAccess\GoogleDriveAccess\" />
+    <Folder Include="Views\SampleOne\" />
+    <Folder Include="DependencyServices\" />
+    <Folder Include="JSONRESTServices\" />
+    <Folder Include="BAL\" />
+    <Folder Include="BAL\BusinessLayer\" />
+    <Folder Include="BAL\InterfaceLayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

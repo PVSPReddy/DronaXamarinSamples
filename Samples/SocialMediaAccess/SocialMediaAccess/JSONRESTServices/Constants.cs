@@ -9,7 +9,7 @@ namespace SocialMediaAccess
 		// INCALERT DEVELOPMENT CREDENTIALS
 		public const string ApplicationID = "";
 		public const string ApiKey = "";
-        public const string Apiurl = "https://api.twitter.com/oauth/request_token";
+        public const string Apiurl = "https://api.twitter.com";
         //"http://phpprojectservices.gearhostpreview.com/ProjFiles/PHPServices/CountriesBasicData/ReceiveService.php?userRequest=GetCountriesDialCodesOnly";
 		public const string MasterKey = "";
 

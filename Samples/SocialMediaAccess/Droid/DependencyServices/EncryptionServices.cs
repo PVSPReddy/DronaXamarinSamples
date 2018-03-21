@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-using SocialMediaAccess.iOS;
+using SocialMediaAccess.Droid;
 using Xamarin.Forms;
 
-[assembly : Dependency(typeof(EncryptionServices))]
-namespace SocialMediaAccess.iOS
+//[assembly: Dependency(typeof(EncryptionServices))]
+namespace SocialMediaAccess.Droid
 {
-    public class EncryptionServices : IEncryptionServices
+    public class EncryptionServices //: IEncryptionServices
     {
-        public EncryptionServices(){}
+        public EncryptionServices() { }
 
 
         public async Task<string> GetSHA1EncryptedString(string strConvert)

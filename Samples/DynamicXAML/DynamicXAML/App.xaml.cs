@@ -4,11 +4,21 @@ namespace DynamicXAML
 {
     public partial class App : Application
     {
+        public static int screenHeight, screenWidth;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new TestXAMLOne();
+            try
+            {
+                MainPage = new StartPage();
+            }
+            catch(System.Exception ex)
+            {
+                var msg = ex.Message + "\n" + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
+            }
+
         }
 
         protected override void OnStart()

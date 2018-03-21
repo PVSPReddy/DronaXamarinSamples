@@ -1,17 +1,13 @@
-﻿<Properties StartupConfiguration="{91C55631-340A-421A-B5F4-874B55C53F81}|Default">
-  <MonoDevelop.Ide.ItemProperties.DynamicXAML.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0EC9017F-1467-48BE-B0B8-04F6068667F2">
+﻿<Properties StartupConfiguration="{34CA2D8C-44AC-49D0-ADE4-7ABC605C4DB8}|Default">
+  <MonoDevelop.Ide.ItemProperties.DynamicXAML.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.DynamicXAML.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DynamicXAML/Views/TestSampleOne/TestSampleOneText.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DynamicXAML/Views/StartPage.xaml.cs">
     <Files>
-      <File FileName="DynamicXAML/App.xaml.cs" Line="25" Column="10" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/TestSampleOneText.txt" Line="4" Column="30" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/BaseXAMLPageOne.xaml.cs" Line="1" Column="1" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/BaseXAMLPageOne.xaml" Line="125" Column="1" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/TestXAMLOne.xaml" Line="81" Column="26" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/TestXAMLOne.xaml.cs" Line="1" Column="1" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/TestXAMLTwo.xaml.cs" Line="1" Column="1" />
-      <File FileName="DynamicXAML/Views/TestSampleOne/TestXAMLTwo.xaml" Line="11" Column="1" />
+      <File FileName="DynamicXAML/Views/TestSampleTwo/HomePageTestTwo.xaml" Line="57" Column="104" />
+      <File FileName="DynamicXAML/Views/TestSampleTwo/HomePageTestTwo.xaml.cs" Line="15" Column="46" />
+      <File FileName="DynamicXAML/Views/StartPage.xaml.cs" Line="32" Column="1" />
+      <File FileName="DynamicXAML/Views/TestSampleTwo/GlobalHeaderOne.xaml.cs" Line="60" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -19,6 +15,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.DynamicXAML.Droid PreferredExecutionTarget="Android.G090ME0671560AKK" />
+  <MonoDevelop.Ide.ItemProperties.DynamicXAML.Droid PreferredExecutionTarget="Android.ZY222Z3P7X" />
   <MultiItemStartupConfigurations />
 </Properties>

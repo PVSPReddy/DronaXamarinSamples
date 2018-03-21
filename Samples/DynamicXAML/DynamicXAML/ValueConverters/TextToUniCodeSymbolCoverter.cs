@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using Xamarin.Forms;
 
-namespace DigitalAlbum.ValueConverters
+namespace DynamicXAML.ValueConverters
 {
     public class TextToUniCodeSymbolCoverter : IValueConverter
     {

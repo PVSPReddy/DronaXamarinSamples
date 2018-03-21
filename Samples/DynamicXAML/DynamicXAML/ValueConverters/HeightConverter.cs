@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace DigitalAlbum.ValueConverters
+namespace DynamicXAML.ValueConverters
 {
     class HeightConverter : IValueConverter
     {
         public static int ScreenHeight;
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            ScreenHeight = BaseContentPage.screenHeight;
+            ScreenHeight = App.screenHeight;
             double percentHeight = 0.0;
             try
             {
