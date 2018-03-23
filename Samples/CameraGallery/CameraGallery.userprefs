@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{4285304F-0790-45A1-A40A-9BB4A2F294B9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CameraGallery/CustomControls/CustomImage.cs">
+    <Files>
+      <File FileName="CameraGallery/DependencyServices/IPictureService.cs" Line="9" Column="28" />
+      <File FileName="Droid/DependencyServices/PictureService.cs" Line="230" Column="22" />
+      <File FileName="iOS/DependencyServices/PictureService.cs" Line="8" Column="35" />
+      <File FileName="CameraGallery/Views/SampleOne/TestOneSample.xaml" Line="21" Column="38" />
+      <File FileName="CameraGallery/App.xaml.cs" Line="10" Column="13" />
+      <File FileName="CameraGallery/CustomControls/CustomImage.cs" Line="53" Column="61" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="15" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="17" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="18" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="19" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CameraGallery.Droid PreferredExecutionTarget="Android.ZY222Z3P7X" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.CameraGallery.iOS>
+</Properties>
