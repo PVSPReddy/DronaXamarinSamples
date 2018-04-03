@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FormsAnimations.Views
@@ -72,7 +72,7 @@ namespace FormsAnimations.Views
             try
             {
                 stopAnimation = true;
-                Device.StartTimer(TimeSpan.FromMilliseconds(unitRotationSpeed), startRotationAnimation);
+                Device.StartTimer(TimeSpan.FromMilliseconds(unitRotationSpeed), startRotationAnimie);
             }
             catch (Exception ex)
             {
@@ -81,7 +81,21 @@ namespace FormsAnimations.Views
             }
         }
 
-        private bool startRotationAnimation()
+        private bool startRotationAnimie()
+        {
+            try
+            {
+                startRotationAnimation();
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message + "\n" + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
+            }
+            return stopAnimation;
+        }
+
+        private async Task<bool> startRotationAnimation()
         {
             try
             {
@@ -104,7 +118,22 @@ namespace FormsAnimations.Views
                     if (i <= 0)
                     {
                         currentChild++;
+                        if (currentChild > (absUnits.Children.Count - 1))
+                        {
+                            currentChild = 0;
+                        }
                         y = height * 2;
+                    }
+                    else if(i<height)
+                    {
+
+                        nextChild = currentChild++;
+                        if (nextChild > (absUnits.Children.Count - 1))
+                        {
+                            nextChild = 0;
+                        }
+                        var nextItem = absUnits.Children[nextChild];
+                        await nextItem.LayoutTo((new Rectangle((nextItem.X), (nextItem.Y + interval), height, width)), unitRotationSpeed, Easing.Linear);
                     }
                     //if(i>height)
                     item.LayoutTo((new Rectangle(x, y, height, width)), unitRotationSpeed, Easing.Linear);
