@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{6C5D02C2-9F9A-46A9-A2DB-BBF0BDEBBE39}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FileDownloaderExample/Views/ImageDownloadDisplay.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/IdownloadService.cs">
     <Files>
       <File FileName="FileDownloaderExample/App.xaml.cs" Line="12" Column="51" />
       <File FileName="FileDownloaderExample/Views/FoldersList.xaml.cs" Line="68" Column="29" />
       <File FileName="FileDownloaderExample/Views/DownloadPage.xaml.cs" Line="136" Column="5" />
       <File FileName="FileDownloaderExample/Views/DisplayDownloaded.xaml.cs" Line="86" Column="18" />
       <File FileName="Droid/MainActivity.cs" Line="33" Column="43" />
-      <File FileName="Droid/DependencyServices/IdownloadService.cs" Line="93" Column="9" />
-      <File FileName="FileDownloaderExample/Views/ImageDownloadDisplay.xaml" Line="42" Column="51" />
+      <File FileName="Droid/DependencyServices/IdownloadService.cs" Line="75" Column="23" />
+      <File FileName="FileDownloaderExample/Views/ImageDownloadDisplay.xaml" Line="52" Column="1" />
       <File FileName="FileDownloaderExample/Views/ImageDownloadDisplay.xaml.cs" Line="45" Column="33" />
       <File FileName="FileDownloaderExample/DependencyServices/IDownloadImage.cs" Line="7" Column="6" />
       <File FileName="Droid/DependencyServices/DownloadImageService.cs" Line="44" Column="1" />

@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{B86541BD-A9A5-4393-ABF1-83E8917FFB44}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs">
+    <Files>
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml" Line="64" Column="17" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs" Line="109" Column="28" />
+      <File FileName="FormsAnimations/Views/StartPage.xaml.cs" Line="16" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.FormsAnimations.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.FormsAnimations.iOS>
+  <MultiItemStartupConfigurations />
+</Properties>
