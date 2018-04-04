@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{B86541BD-A9A5-4393-ABF1-83E8917FFB44}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs">
     <Files>
-      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml" Line="64" Column="17" />
-      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs" Line="109" Column="28" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml" Line="101" Column="15" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs" Line="117" Column="1" />
       <File FileName="FormsAnimations/Views/StartPage.xaml.cs" Line="16" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
