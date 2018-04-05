@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FormsAnimations.Views.SpeedMeterSampleFour">
+
+    
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BoxOverLayTransparentColor">#000000</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <!--<OnPlatform x:TypeArguments="Thickness"
+                iOS="10,0,0,0"
+                Android="10,0,0,0"
+            WinPhone="8,0,0,0" />-->
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" /> 
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout BackgroundColor="Teal" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Text="Back" TextColor="Maroon" Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" >
+                    </Button>
+                    <Button x:Name="btnNext" Text="Next" TextColor="Maroon" Grid.Row="0" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" >
+                    </Button>
+                </Grid>
+            </StackLayout>
+
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" VerticalOptions="FillAndExpand">
+
+
+                    <Grid x:Name="gridOverLay" Grid.Row="1" Grid.Column="1" RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <AbsoluteLayout x:Name="absThousands" BackgroundColor="Aqua" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </AbsoluteLayout>
+                        <AbsoluteLayout x:Name="absHundreds" BackgroundColor="Aqua" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </AbsoluteLayout>
+                        <AbsoluteLayout x:Name="absTens" BackgroundColor="Aqua" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </AbsoluteLayout>
+                        <AbsoluteLayout x:Name="absUnits" BackgroundColor="Aqua" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Grid.ColumnSpan="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </AbsoluteLayout>
+                        
+                        <BoxView BackgroundColor="{x:StaticResource BoxOverLayTransparentColor}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </BoxView>
+                        <BoxView BackgroundColor="{x:StaticResource BoxOverLayTransparentColor}" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </BoxView>
+                        <BoxView BackgroundColor="{x:StaticResource BoxOverLayTransparentColor}" Grid.Row="2" Grid.Column="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </BoxView>
+                        <BoxView BackgroundColor="{x:StaticResource BoxOverLayTransparentColor}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        </BoxView>
+                    </Grid>
+
+                    <Label x:Name="labelResult" Text="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Label>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                        <Button x:Name="btnStartAnimation" Text="Start Animation" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StartAnimationClicked" >
+                        </Button>
+                        <Button x:Name="btnStopAnimation" Text="Stop Animation" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="StopAnimationClicked" >
+                        </Button>
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+            
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

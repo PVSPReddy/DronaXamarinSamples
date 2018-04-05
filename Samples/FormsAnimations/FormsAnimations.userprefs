@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{B86541BD-A9A5-4393-ABF1-83E8917FFB44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FormsAnimations/Views/SpeedMeterSampleFive.xaml.cs">
     <Files>
-      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml" Line="101" Column="15" />
-      <File FileName="FormsAnimations/Views/SpeedMeterSampleTwo.xaml.cs" Line="117" Column="1" />
       <File FileName="FormsAnimations/Views/StartPage.xaml.cs" Line="16" Column="10" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleFour.xaml" Line="109" Column="1" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleFour.xaml.cs" Line="5" Column="1" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleThree.xaml.cs" Line="200" Column="21" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleFive.xaml.cs" Line="344" Column="14" />
+      <File FileName="FormsAnimations/Views/SpeedMeterSampleFive.xaml" Line="108" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -14,5 +17,6 @@
   <MonoDevelop.Ide.ItemProperties.FormsAnimations.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.FormsAnimations.iOS>
+  <MonoDevelop.Ide.ItemProperties.FormsAnimations.Droid PreferredExecutionTarget="Android.G090ME0671560AKK" />
   <MultiItemStartupConfigurations />
 </Properties>
