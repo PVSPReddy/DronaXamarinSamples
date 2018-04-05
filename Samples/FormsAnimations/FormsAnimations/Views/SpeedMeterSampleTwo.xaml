@@ -53,11 +53,17 @@
                         </BoxView>
                     </Grid>
 
+                    <Label x:Name="labelResult" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+
+                    <Label x:Name="labelResultTwo" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    </Label>
+
                     <Button x:Name="btnStartAnimation" Text="Start Animation" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="StartAnimationClicked" >
                     </Button>
                     <Button x:Name="btnStopAnimation" Text="Stop Animation" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="StopAnimationClicked" >
                     </Button>
-                    <Button x:Name="btnBack" Text="Stop Animation" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" >
+                    <Button x:Name="btnBack" Text="Back" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Clicked="BackButtonClicked" >
                     </Button>
                     
                 </StackLayout>
