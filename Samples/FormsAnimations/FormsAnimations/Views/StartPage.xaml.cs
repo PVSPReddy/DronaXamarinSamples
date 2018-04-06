@@ -16,7 +16,7 @@ namespace FormsAnimations.Views
         {
             try
             {
-                Navigation.PushModalAsync(new SpeedMeterSampleFour());
+                Navigation.PushModalAsync(new SpeedMeterSampleSeven());
             }
             catch(Exception ex)
             {

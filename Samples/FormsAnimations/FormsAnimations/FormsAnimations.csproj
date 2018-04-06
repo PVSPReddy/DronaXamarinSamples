@@ -54,6 +54,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpeedMeterSampleSix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpeedMeterSampleSeven.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -80,6 +88,12 @@
     </Compile>
     <Compile Include="Views\SpeedMeterSampleFive.xaml.cs">
       <DependentUpon>SpeedMeterSampleFive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpeedMeterSampleSix.xaml.cs">
+      <DependentUpon>SpeedMeterSampleSix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpeedMeterSampleSeven.xaml.cs">
+      <DependentUpon>SpeedMeterSampleSeven.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

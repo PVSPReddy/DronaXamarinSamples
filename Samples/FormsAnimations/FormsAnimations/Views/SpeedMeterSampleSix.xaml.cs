@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace FormsAnimations.Views
 {
-    public partial class SpeedMeterSampleFive : ContentPage
+    public partial class SpeedMeterSampleSix : ContentPage
     {
         #region for global variables
         double screenHeight, screenWidth;
@@ -15,7 +15,7 @@ namespace FormsAnimations.Views
         int currentUnitsChildValue = 0, currentTensChildValue, currentHundredsChildValue, currentThousandsChildValue;
         #endregion
 
-        public SpeedMeterSampleFive()
+        public SpeedMeterSampleSix()
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace FormsAnimations.Views
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SpeedMeterSampleSix());
+                    Navigation.PushModalAsync(new SpeedMeterSampleSeven());
                 }
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace FormsAnimations.Views
 
                 for (int i = startIndex; i <= endIndex; i++)
                 {
-                    NumbersLayoutFive numbersLayout = new NumbersLayoutFive(i);
+                    NumbersLayoutSix numbersLayout = new NumbersLayoutSix(i);
 
                     if (i == startIndex)
                     {
@@ -160,7 +160,7 @@ namespace FormsAnimations.Views
         }
         #endregion
 
-        #region animation starts here
+        #region animation of common units starts here
         private int moveAbsCommon(AbsoluteLayout currentLayout, int currentItemNo, double interval)
         {
             try
@@ -241,6 +241,7 @@ namespace FormsAnimations.Views
                     if (currentUnitsChildNo > absUnits.Children.Count - 1)
                     {
                         currentUnitsChildNo = 0;
+                        currentTensChildNo++;
                         moveAbsTens(interval);
                     }
                     currentUnitsChildNo = moveAbsCommon(absUnits, currentUnitsChildNo, interval);
@@ -249,6 +250,7 @@ namespace FormsAnimations.Views
                 {
                     currentUnitsChildValue = 0;
                     currentUnitsChildValue = await AfterEffects(absUnits, currentUnitsChildNo);
+                    //currentTensChildNo += (currentUnitsChildValue == 0) ? (1) : (0);
                     moveAbsTens(interval);
                 }
             }
@@ -271,6 +273,7 @@ namespace FormsAnimations.Views
                     if (currentTensChildNo > absTens.Children.Count - 1)
                     {
                         currentTensChildNo = 0;
+                        currentHundredsChildNo++;
                         moveAbsHundreds(interval);
                     }
                     currentTensChildNo = moveAbsCommon(absTens, currentTensChildNo, (screenWidth * 10));
@@ -279,6 +282,7 @@ namespace FormsAnimations.Views
                 {
                     currentTensChildValue = 0;
                     currentTensChildValue = (await AfterEffects(absTens, currentTensChildNo)) * 10;
+                    //currentHundredsChildNo += (currentTensChildValue == 0) ? (1) : (0);
                     moveAbsHundreds(interval);
                 }
             }
@@ -300,6 +304,7 @@ namespace FormsAnimations.Views
                     if (currentHundredsChildNo > absHundreds.Children.Count - 1)
                     {
                         currentHundredsChildNo = 0;
+                        currentThousandsChildNo++;
                         moveAbsThousands(interval);
                     }
                     currentHundredsChildNo = moveAbsCommon(absHundreds, currentHundredsChildNo, (screenWidth * 10));
@@ -307,7 +312,8 @@ namespace FormsAnimations.Views
                 else
                 {
                     currentHundredsChildValue = 0;
-                    currentHundredsChildValue = (await AfterEffects(absHundreds, currentHundredsChildNo))*100;
+                    currentHundredsChildValue = (await AfterEffects(absHundreds, currentHundredsChildNo)) * 100;
+                    //currentThousandsChildNo += (currentHundredsChildValue == 0) ? (1) : (0);
                     moveAbsThousands(interval);
                 }
             }
@@ -479,10 +485,10 @@ namespace FormsAnimations.Views
         #endregion
     }
 
-    class NumbersLayoutFive : StackLayout
+    class NumbersLayoutSix : StackLayout
     {
         double screenHeight, screenWidth;
-        public NumbersLayoutFive(int number)
+        public NumbersLayoutSix(int number)
         {
             screenHeight = (App.screenHeight * 1) / 100;
             screenWidth = (App.screenWidth * 1) / 100;

@@ -5,17 +5,17 @@ using Xamarin.Forms;
 
 namespace FormsAnimations.Views
 {
-    public partial class SpeedMeterSampleFive : ContentPage
+    public partial class SpeedMeterSampleSeven : ContentPage
     {
         #region for global variables
         double screenHeight, screenWidth;
         bool stopAnimation = true;
-        uint unitRotationSpeed = 1;
+        uint rotationSpeed = 100;
         int currentUnitsChildNo = 0, currentTensChildNo, currentHundredsChildNo, currentThousandsChildNo;
         int currentUnitsChildValue = 0, currentTensChildValue, currentHundredsChildValue, currentThousandsChildValue;
         #endregion
 
-        public SpeedMeterSampleFive()
+        public SpeedMeterSampleSeven()
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace FormsAnimations.Views
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new SpeedMeterSampleSix());
+                    //Navigation.PushModalAsync(new SpeedMeterSampleFive());
                 }
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace FormsAnimations.Views
 
                 for (int i = startIndex; i <= endIndex; i++)
                 {
-                    NumbersLayoutFive numbersLayout = new NumbersLayoutFive(i);
+                    NumbersLayoutSeven numbersLayout = new NumbersLayoutSeven(i);
 
                     if (i == startIndex)
                     {
@@ -134,7 +134,7 @@ namespace FormsAnimations.Views
             try
             {
                 stopAnimation = true;
-                Device.StartTimer(TimeSpan.FromMilliseconds(unitRotationSpeed), startRotationAnimie);
+                Device.StartTimer(TimeSpan.FromMilliseconds(rotationSpeed), startRotationAnimie);
             }
             catch (Exception ex)
             {
@@ -161,7 +161,7 @@ namespace FormsAnimations.Views
         #endregion
 
         #region animation starts here
-        private int moveAbsCommon(AbsoluteLayout currentLayout, int currentItemNo, double interval)
+        private int moveAbsCommon(AbsoluteLayout currentLayout, int currentItemNo, double interval, uint unitRotationSpeed)
         {
             try
             {
@@ -238,17 +238,24 @@ namespace FormsAnimations.Views
                 var interval = (screenWidth * 5);
                 if (stopAnimation)
                 {
-                    if (currentUnitsChildNo > absUnits.Children.Count - 1)
+                    if(currentUnitsChildNo == absUnits.Children.Count - 1)
                     {
-                        currentUnitsChildNo = 0;
                         moveAbsTens(interval);
                     }
-                    currentUnitsChildNo = moveAbsCommon(absUnits, currentUnitsChildNo, interval);
+                    else if (currentUnitsChildNo > absUnits.Children.Count - 1)
+                    {
+                        currentUnitsChildNo = 0;
+                        //currentTensChildNo++;
+                        //}
+                        //moveAbsTens(interval);
+                    }
+                    currentUnitsChildNo = moveAbsCommon(absUnits, currentUnitsChildNo, interval, rotationSpeed);
                 }
                 else
                 {
                     currentUnitsChildValue = 0;
                     currentUnitsChildValue = await AfterEffects(absUnits, currentUnitsChildNo);
+                    //currentTensChildNo += (currentUnitsChildValue == 0) ? (1) : (0);
                     moveAbsTens(interval);
                 }
             }
@@ -266,20 +273,26 @@ namespace FormsAnimations.Views
         {
             try
             {
+                interval = (screenWidth * 10);
                 if (stopAnimation)
                 {
+                    uint _rotationSpeed = (this.rotationSpeed * 10);
                     if (currentTensChildNo > absTens.Children.Count - 1)
                     {
+                        //moveAbsHundreds(interval);
                         currentTensChildNo = 0;
-                        moveAbsHundreds(interval);
+                        //currentHundredsChildNo++;
+                        //}
+                        //moveAbsHundreds(interval);
                     }
-                    currentTensChildNo = moveAbsCommon(absTens, currentTensChildNo, (screenWidth * 10));
+                    currentTensChildNo = StartOtherAnimations(absTens, currentTensChildNo, interval, _rotationSpeed);
                 }
                 else
                 {
                     currentTensChildValue = 0;
                     currentTensChildValue = (await AfterEffects(absTens, currentTensChildNo)) * 10;
-                    moveAbsHundreds(interval);
+                    //currentHundredsChildNo += (currentTensChildValue == 0) ? (1) : (0);
+                    //moveAbsHundreds(interval);
                 }
             }
             catch (Exception ex)
@@ -295,19 +308,23 @@ namespace FormsAnimations.Views
         {
             try
             {
+                uint _rotationSpeed = (this.rotationSpeed * 20);
                 if (stopAnimation)
                 {
                     if (currentHundredsChildNo > absHundreds.Children.Count - 1)
                     {
                         currentHundredsChildNo = 0;
+                        //currentThousandsChildNo++;
+                        //}
                         moveAbsThousands(interval);
                     }
-                    currentHundredsChildNo = moveAbsCommon(absHundreds, currentHundredsChildNo, (screenWidth * 10));
+                    currentHundredsChildNo = StartOtherAnimations(absHundreds, currentHundredsChildNo, interval, _rotationSpeed);
                 }
                 else
                 {
                     currentHundredsChildValue = 0;
-                    currentHundredsChildValue = (await AfterEffects(absHundreds, currentHundredsChildNo))*100;
+                    currentHundredsChildValue = (await AfterEffects(absHundreds, currentHundredsChildNo)) * 100;
+                    //currentThousandsChildNo += (currentHundredsChildValue == 0) ? (1) : (0);
                     moveAbsThousands(interval);
                 }
             }
@@ -324,13 +341,14 @@ namespace FormsAnimations.Views
         {
             try
             {
+                uint _rotationSpeed = (this.rotationSpeed * 30);
                 if (stopAnimation)
                 {
                     if (currentThousandsChildNo > absThousands.Children.Count - 1)
                     {
                         currentThousandsChildNo = 0;
                     }
-                    currentThousandsChildNo = moveAbsCommon(absThousands, currentThousandsChildNo, (screenWidth * 10));
+                    currentThousandsChildNo = StartOtherAnimations(absThousands, currentThousandsChildNo, interval, _rotationSpeed);
                 }
                 else
                 {
@@ -347,6 +365,65 @@ namespace FormsAnimations.Views
                 var msg = ex.Message + "\n" + ex.StackTrace;
                 System.Diagnostics.Debug.WriteLine(msg);
             }
+        }
+        #endregion
+
+        #region for animations after units place
+        private int StartOtherAnimations(AbsoluteLayout currentLayout, int currentItemNo, double interval, uint unitRotationSpeed)
+        {
+            try
+            {
+                if (stopAnimation)
+                {
+                    double x, y, height, width;
+                    x = 0;
+                    y = 0;
+                    height = screenWidth * 10;
+                    width = screenWidth * 10;
+                    View currentItem = null, pastItem = null, nextItem = null;
+
+
+                    if (currentItemNo == 0)
+                    {
+                        pastItem = currentLayout.Children[(currentLayout.Children.Count - 1)];
+                        currentItem = currentLayout.Children[currentItemNo];
+                        nextItem = currentLayout.Children[currentItemNo + 1];
+                    }
+                    else if (currentItemNo == (currentLayout.Children.Count - 1))
+                    {
+                        pastItem = currentLayout.Children[currentItemNo - 1];
+                        currentItem = currentLayout.Children[currentItemNo];
+                        nextItem = currentLayout.Children[0];
+                    }
+                    else
+                    {
+                        pastItem = currentLayout.Children[currentItemNo - 1];
+                        currentItem = currentLayout.Children[currentItemNo];
+                        nextItem = currentLayout.Children[currentItemNo + 1];
+                    }
+
+                    if ((!(currentItem == null)) && (!(pastItem == null)) && (!(nextItem == null)))
+                    {
+                        //pastItem.Opacity = 0;
+                        //nextItem.Opacity = 1;
+                    }
+
+                    pastItem.LayoutTo((new Rectangle(x, (height * 2), height, width)));
+                    currentItem.LayoutTo((new Rectangle(x, (0), height, width)), unitRotationSpeed, Easing.Linear);
+                    nextItem.LayoutTo((new Rectangle(x, (height * 1), height, width)), unitRotationSpeed, Easing.Linear);
+                    //if (currentItem.Y <= height)
+                    //{
+                    //    nextItem.LayoutTo((new Rectangle(x, (height * 1), height, width)), unitRotationSpeed, Easing.Linear);
+                    //}
+                    currentItemNo++;
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message + "\n" + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
+            }
+            return currentItemNo;
         }
         #endregion
 
@@ -448,9 +525,9 @@ namespace FormsAnimations.Views
                     _nextItem = currentLayout.Children[currentItemNo + 1];
                 }
 
-                _pastItem.LayoutTo((new Rectangle(x, 0, height, width)), unitRotationSpeed, Easing.Linear);
-                _currentItem.LayoutTo((new Rectangle(x, (height), height, width)), unitRotationSpeed, Easing.Linear);
-                _nextItem.LayoutTo((new Rectangle(x, (height * 2), height, width)), unitRotationSpeed, Easing.Linear);
+                _pastItem.LayoutTo((new Rectangle(x, 0, height, width)), rotationSpeed, Easing.Linear);
+                _currentItem.LayoutTo((new Rectangle(x, (height), height, width)), rotationSpeed, Easing.Linear);
+                _nextItem.LayoutTo((new Rectangle(x, (height * 2), height, width)), rotationSpeed, Easing.Linear);
 
                 if (_pastItem.Opacity == 0)
                 {
@@ -479,10 +556,10 @@ namespace FormsAnimations.Views
         #endregion
     }
 
-    class NumbersLayoutFive : StackLayout
+    class NumbersLayoutSeven : StackLayout
     {
         double screenHeight, screenWidth;
-        public NumbersLayoutFive(int number)
+        public NumbersLayoutSeven(int number)
         {
             screenHeight = (App.screenHeight * 1) / 100;
             screenWidth = (App.screenWidth * 1) / 100;
