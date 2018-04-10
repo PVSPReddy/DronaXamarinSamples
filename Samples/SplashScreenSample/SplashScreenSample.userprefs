@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{4CF47DC9-C861-4639-A785-89EE2F9105D0}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/SplashActivity.cs">
+    <Files>
+      <File FileName="SplashScreenSample/Views/StartPage.xaml" Line="19" Column="1" />
+      <File FileName="SplashScreenSample/Views/StartPage.xaml.cs" Line="6" Column="29" />
+      <File FileName="SplashScreenSample/App.xaml.cs" Line="22" Column="10" />
+      <File FileName="Droid/SplashActivity.cs" Line="28" Column="30" />
+      <File FileName="Droid/MainActivity.cs" Line="29" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SplashScreenSample.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY222Z3P7X" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.SplashScreenSample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BD353F08-B061-48E8-A2EF-14D7D4CE4E9C">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.SplashScreenSample.iOS>
+</Properties>
