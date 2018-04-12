@@ -9,9 +9,11 @@
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             </StackLayout>
-            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Label Text="Hello World!" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="20,0,20,0" AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Hello World!" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                 </Label>
+                <Button x:Name="btnSubmit" Text="Submit" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                </Button>
             </StackLayout>
         </AbsoluteLayout>
 	</ContentPage.Content>

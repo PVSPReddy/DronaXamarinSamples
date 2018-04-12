@@ -13,25 +13,37 @@ using Xamarin.Forms;
 
 namespace SplashScreenSample.Droid
 {
-    [Activity(Label = "SplashActivity", MainLauncher = true, NoHistory = true)]
-    public class SplashActivity : Activity
+    //[Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true)]
+    //[Activity(Label = "Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true)]
+    public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            //var inflater = LayoutInflater.From(Forms.Context);
-            //var nativeView = inflater.Inflate(Resource.Layout.SplashLayout, null);
             SetContentView(Resource.Layout.SplashLayout);
-            //SetContentView(Resource.Layout.SplashScreen);
-            // Create your application here
-            Thread.Sleep(1000); // Simulate a long loading process on app startup.
-            StartActivity(typeof(MainActivity));
+            var text = FindViewById<TextView>(Resource.Id.splashTextTitle);
+            text.Text = "Hello World in Splash";
 
+            System.Threading.Tasks.Task.Run(() => {
+                Thread.Sleep(2000);
+                StartActivity(typeof(MainActivity));
+            });
+
+            //this also works but splash will not be displayed because
             /*
-            var inflater = LayoutInflater.From(Forms.Context);
-            nativeView = inflater.Inflate(Resource.Layout.viewpager, null);
+            The screen is blank because by calling Thread.Sleep then StartActivity in OnCreateView,
+            you are first pausing the UI thread (which will cause nothing to display)
+            and are then exiting the activity immediately by using StartActivity.
+            To fix this, shift Thread.Sleep() and StartActivity() into a background thread;
             */
+            //so we have to use above method
+
+            //Thread.Sleep(1000); // Simulate a long loading process on app startup.
+            //StartActivity(typeof(MainActivity));
+
+
         }
     }
 }

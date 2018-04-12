@@ -10,6 +10,17 @@ namespace SplashScreenSample
         public StartPage()
         {
             InitializeComponent();
+            btnSubmit.Clicked += (object sender, EventArgs e) => 
+            {
+                try
+                {
+                    Navigation.PushModalAsync(new CheckViewOne());
+                }
+                catch(Exception ex)
+                {
+                    var msg = ex.Message;
+                }
+            };
         }
     }
 }
