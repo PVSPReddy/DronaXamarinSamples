@@ -2,7 +2,7 @@
 <resources>
     <style name="Theme.Splash"  parent="Theme.AppCompat.Light.NoActionBar">
 <!--        <item name="android:windowBackground">@drawable/SplashScreen</item>-->
-        <item name="android:background">#e5335c</item>
+        <item name="android:background">#f99d1c</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
 <!--        <item name="colorPrimaryDark">#e5335c</item>-->

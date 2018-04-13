@@ -2844,6 +2844,9 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f080020
 			public const int beginning = 2131230752;
 			
+			// aapt resource value: 0x7f0800b2
+			public const int bodyLayout = 2131230898;
+			
 			// aapt resource value: 0x7f080028
 			public const int bottom = 2131230760;
 			
@@ -2885,6 +2888,9 @@ namespace SplashScreenSample.Droid
 			
 			// aapt resource value: 0x7f080076
 			public const int coordinator = 2131230838;
+			
+			// aapt resource value: 0x7f0800b4
+			public const int ctrlActivityIndicator = 2131230900;
 			
 			// aapt resource value: 0x7f080055
 			public const int custom = 2131230805;
@@ -2952,6 +2958,12 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f08003f
 			public const int @fixed = 2131230783;
 			
+			// aapt resource value: 0x7f0800b5
+			public const int footerLayout = 2131230901;
+			
+			// aapt resource value: 0x7f0800b6
+			public const int footerTextOne = 2131230902;
+			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
 			
@@ -2994,8 +3006,8 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int masked = 2131230902;
+			// aapt resource value: 0x7f0800ba
+			public const int masked = 2131230906;
 			
 			// aapt resource value: 0x7f0800a1
 			public const int media_actions = 2131230881;
@@ -3195,8 +3207,8 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f080017
 			public const int showTitle = 2131230743;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int sliding_tabs = 2131230899;
+			// aapt resource value: 0x7f0800b7
+			public const int sliding_tabs = 2131230903;
 			
 			// aapt resource value: 0x7f080073
 			public const int smallLabel = 2131230835;
@@ -3213,8 +3225,8 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f08004c
 			public const int spacer = 2131230796;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int splashTextTitle = 2131230898;
+			// aapt resource value: 0x7f0800b3
+			public const int splashLogo = 2131230899;
 			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
@@ -3276,8 +3288,8 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f080057
 			public const int title_template = 2131230807;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int toolbar = 2131230900;
+			// aapt resource value: 0x7f0800b8
+			public const int toolbar = 2131230904;
 			
 			// aapt resource value: 0x7f080029
 			public const int top = 2131230761;
@@ -3303,8 +3315,8 @@ namespace SplashScreenSample.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int visible = 2131230901;
+			// aapt resource value: 0x7f0800b9
+			public const int visible = 2131230905;
 			
 			// aapt resource value: 0x7f080093
 			public const int volume_item_container = 2131230867;

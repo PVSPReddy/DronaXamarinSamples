@@ -1,10 +1,5 @@
-﻿<Properties StartupConfiguration="{4CF47DC9-C861-4639-A785-89EE2F9105D0}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/SplashActivity.cs">
-    <Files>
-      <File FileName="Droid/SplashActivity.cs" Line="38" Column="13" />
-      <File FileName="Droid/Properties/AndroidManifest.xml" Line="13" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{B101FF1A-4CA0-4C4C-BF24-6B069A49222D}|Default">
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

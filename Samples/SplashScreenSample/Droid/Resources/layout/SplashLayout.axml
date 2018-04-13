@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/accent_material_light"
+    android:background="#f99d1c"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
-    <TextView
-        android:text="Hello World"
-        android:textColor="#000000"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/bodyLayout">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/icon"
+            android:id="@+id/splashLogo" />
+        <ProgressBar
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/ctrlActivityIndicator"
+            android:indeterminateOnly="true"
+            android:keepScreenOn="true" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:id="@+id/splashTextTitle" />
+        android:gravity="right|end"
+        android:id="@+id/footerLayout">
+        <TextView
+            android:text="A product by MactoSoft PVT LTD"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textColor="#FFFFFF"
+            android:gravity="right"
+            android:layout_gravity="left"
+            android:textAlignment="textEnd"
+            android:layout_marginRight="60dp"
+            android:id="@+id/footerTextOne" />
+    </LinearLayout>
 </LinearLayout>

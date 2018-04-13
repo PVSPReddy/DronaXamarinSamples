@@ -22,9 +22,15 @@ namespace SplashScreenSample.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            //Remove title bar
+            //this.RequestWindowFeature(WindowFeatures.NoTitle);
+
+            //Remove notification bar
+            //this.Window.SetFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
             SetContentView(Resource.Layout.SplashLayout);
-            var text = FindViewById<TextView>(Resource.Id.splashTextTitle);
-            text.Text = "Hello World in Splash";
+            //var text = FindViewById<TextView>(Resource.Id.splashTextTitle);
+            //text.Text = "Hello World in Splash";
 
             System.Threading.Tasks.Task.Run(() => {
                 Thread.Sleep(2000);
