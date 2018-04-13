@@ -1,27 +1,52 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
-	<dependencies>
-		<deployment identifier="iOS" />
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530" />
-	</dependencies>
-	<scenes>
-		<!--View Controller-->
-		<scene sceneID="EHf-IW-A2E">
-			<objects>
-				<viewController id="01J-lp-oVM" sceneMemberID="viewController">
-					<layoutGuides>
-						<viewControllerLayoutGuide type="top" id="Llm-lL-Icb" />
-						<viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok" />
-					</layoutGuides>
-					<view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-						<rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-						<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-						<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-					</view>
-				</viewController>
-				<placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder" />
-			</objects>
-			<point key="canvasLocation" x="53" y="375" />
-		</scene>
-	</scenes>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="398"/>
+                        <viewControllerLayoutGuide type="bottom" id="399"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="197" translatesAutoresizingMaskIntoConstraints="NO" text="A product by Sivaprasad PVT LTD" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="110" y="627" width="234" height="33"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" id="198" translatesAutoresizingMaskIntoConstraints="NO" image="icon.png" misplaced="YES" ambiguous="YES" horizontalHuggingPriority="455">
+                                <rect key="frame" x="129" y="289" width="117" height="89"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="199" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="178" y="360" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <rect key="contentStretch" x="0" y="0.0" width="1" height="1"/>
+                        <constraints>
+                            <constraint id="597" firstItem="198" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height"/>
+                            <constraint id="598" firstItem="199" firstAttribute="top" secondItem="198" secondAttribute="bottom" constant="56"/>
+                            <constraint id="599" firstItem="199" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height"/>
+                            <constraint id="600" firstItem="197" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="94"/>
+                            <constraint id="601" firstItem="197" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon.png" width="96" height="96"/>
+    </resources>
 </document>
