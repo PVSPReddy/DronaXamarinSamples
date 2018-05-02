@@ -215,18 +215,29 @@ namespace CameraGallery.Droid
                 options.InJustDecodeBounds = false;
 
                 originalImage = BitmapFactory.DecodeFile(uuuri, options);
-                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, reqWidth, reqHeight, false);
+                //Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, reqWidth, reqHeight, false);
+                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, reqWidth, reqHeight, true);
                 using (System.IO.Stream stream = System.IO.File.Create(_uuuri))
                 {
-                    var filedone = resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 30, stream);
+                    //var filedone = resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 30, stream);
+                    var filedone = resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 90, stream);
                     try
                     {
+                        PictureActionArgs args = new PictureActionArgs()
+                        {
+                            LocalPictureURL = _uuuri
+                        };
+                        XamCustomImage.xamCustomImage.SetImage(_uuuri);
+                        //PictureActionCompleted(this, args);
+
+                        /*
                         PictureActionArgs args = new PictureActionArgs()
                         {
                             LocalPictureURL = uuuri
                         };
                         XamCustomImage.xamCustomImage.SetImage(uuuri);
                         //PictureActionCompleted(this, args);
+                        */
                     }
                     catch(Exception ex)
                     {
@@ -246,7 +257,8 @@ namespace CameraGallery.Droid
             }
             catch (Exception ex)
             {
-                var msg = ex.Message;
+                var msg = ex.Message + "\n" + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
                 Finish();
             }
         }

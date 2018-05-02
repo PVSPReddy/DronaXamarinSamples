@@ -1,27 +1,26 @@
 ﻿<Properties StartupConfiguration="{4285304F-0790-45A1-A40A-9BB4A2F294B9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CameraGallery/CustomControls/CustomImage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/CustomControls/CropOverLayCircleRender.cs">
     <Files>
-      <File FileName="CameraGallery/DependencyServices/IPictureService.cs" Line="9" Column="28" />
-      <File FileName="Droid/DependencyServices/PictureService.cs" Line="230" Column="22" />
-      <File FileName="iOS/DependencyServices/PictureService.cs" Line="8" Column="35" />
-      <File FileName="CameraGallery/Views/SampleOne/TestOneSample.xaml" Line="21" Column="38" />
-      <File FileName="CameraGallery/App.xaml.cs" Line="10" Column="13" />
-      <File FileName="CameraGallery/CustomControls/CustomImage.cs" Line="53" Column="61" />
+      <File FileName="CameraGallery/Views/SampleOne/TestTwoSample.xaml" Line="29" Column="41" />
+      <File FileName="CameraGallery/Views/SampleOne/TestTwoSample.xaml.cs" Line="6" Column="24" />
+      <File FileName="CameraGallery/Views/SampleOne/TestOneSample.xaml" Line="25" Column="27" />
+      <File FileName="CameraGallery/App.xaml.cs" Line="14" Column="42" />
+      <File FileName="CameraGallery/obj/Debug/CameraGallery.Views.SampleOne.TestTwoSample.xaml.g.cs" Line="20" Column="1" />
+      <File FileName="Droid/CustomControls/CropOverLayCircleRender.cs" Line="71" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="15" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="17" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="18" column="1" />
-      <Breakpoint file="/Users/rabbit/Desktop/untitledfolder/PersonalProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="19" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="15" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="31" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="24" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.CameraGallery.Droid PreferredExecutionTarget="Android.ZY222Z3P7X" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C95224D6-DD97-49E5-8302-491746C7D5CE">
+  <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BD353F08-B061-48E8-A2EF-14D7D4CE4E9C">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.CameraGallery.iOS>
 </Properties>

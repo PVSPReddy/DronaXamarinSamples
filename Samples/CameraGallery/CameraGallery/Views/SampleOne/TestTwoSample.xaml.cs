@@ -5,13 +5,14 @@ using Xamarin.Forms;
 
 namespace CameraGallery
 {
-    public partial class TestOneSample : ContentPage
+    public partial class TestTwoSample : ContentPage
     {
-        public TestOneSample()
+        public TestTwoSample()
         {
             InitializeComponent();
 
-            DependencyService.Get<IPictureService>().PictureActionCompleted += (object sender, IPictureActionArgs e) => 
+            /*
+            DependencyService.Get<IPictureService>().PictureActionCompleted += (object sender, IPictureActionArgs e) =>
             {
                 try
                 {
@@ -34,6 +35,7 @@ namespace CameraGallery
                     var msg = ex.Message;
                 }
             };
+            */
         }
 
         private async void SelectImage(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace CameraGallery
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var msg = ex.Message + "\n" + ex.StackTrace;
                 System.Diagnostics.Debug.WriteLine(msg);

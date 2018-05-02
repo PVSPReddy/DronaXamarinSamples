@@ -8,7 +8,7 @@ namespace CameraGallery
         {
             InitializeComponent();
 
-            MainPage = new TestOneSample();
+            MainPage = new TestTwoSample();
         }
 
         protected override void OnStart()
