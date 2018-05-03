@@ -19,7 +19,9 @@
                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SelectImage"/>
                     </Image.GestureRecognizers>
                 </Image>-->
-                <local:XamCustomImage Source="WallpaperTwo.png" BackgroundColor="Green" MinimumHeightRequest="200" MinimumWidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <!--<local:XamCustomImage Source="WallpaperTwo.png" BackgroundColor="Green" MinimumHeightRequest="200" MinimumWidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                </local:XamCustomImage>-->
+                <local:XamCustomImage BackgroundColor="Green" MinimumHeightRequest="200" MinimumWidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                 </local:XamCustomImage>
                 <Button Text="Select Image" HorizontalOptions="FillAndExpand" VerticalOptions="End" Clicked="SelectImage">
                 </Button>

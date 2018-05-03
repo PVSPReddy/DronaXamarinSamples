@@ -120,6 +120,7 @@
     <Compile Include="DependencyServices\PictureService.cs" />
     <Compile Include="DependencyServices\CropServiceActivity.cs" />
     <Compile Include="CustomControls\CropOverLayCircleRender.cs" />
+    <Compile Include="CustomControls\CropOverLayCircleTwoRender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

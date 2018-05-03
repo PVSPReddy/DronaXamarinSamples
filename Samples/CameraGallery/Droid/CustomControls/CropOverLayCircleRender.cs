@@ -6,7 +6,7 @@ using CameraGallery.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly : ExportRenderer(typeof(CropOverLayCircle), typeof(CropOverLayCircleRender))]
+//[assembly : ExportRenderer(typeof(CropOverLayCircle), typeof(CropOverLayCircleRender))]
 namespace CameraGallery.Droid
 {
     public class CropOverLayCircleRender : ViewRenderer, Android.Views.View.IOnTouchListener
