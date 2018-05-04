@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{4285304F-0790-45A1-A40A-9BB4A2F294B9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/CustomControls/CropOverLayCircleRender.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/CropServiceActivity.cs">
     <Files>
-      <File FileName="CameraGallery/Views/SampleOne/TestTwoSample.xaml" Line="29" Column="41" />
-      <File FileName="CameraGallery/Views/SampleOne/TestTwoSample.xaml.cs" Line="6" Column="24" />
-      <File FileName="CameraGallery/Views/SampleOne/TestOneSample.xaml" Line="25" Column="27" />
-      <File FileName="CameraGallery/App.xaml.cs" Line="14" Column="42" />
-      <File FileName="CameraGallery/obj/Debug/CameraGallery.Views.SampleOne.TestTwoSample.xaml.g.cs" Line="20" Column="1" />
-      <File FileName="Droid/CustomControls/CropOverLayCircleRender.cs" Line="71" Column="24" />
+      <File FileName="Droid/CustomControls/CustomImageRender.cs" Line="55" Column="27" />
+      <File FileName="Droid/DependencyServices/CropServiceActivity.cs" Line="494" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -15,6 +11,8 @@
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="15" column="1" />
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="31" column="1" />
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="24" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="254" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="252" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

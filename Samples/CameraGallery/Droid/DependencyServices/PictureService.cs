@@ -92,6 +92,21 @@ namespace CameraGallery.Droid
             }
         }
 
+        public void CropImage()
+        {
+            var activity = Forms.Context as Activity;
+            try
+            {
+                var intent = new Intent(activity, typeof(CropServiceActivity));
+                intent.PutExtra("id", 1);
+                activity.StartActivity(intent);
+            }
+            catch(Exception ex)
+            {
+                var msg = ex.Message;
+            }
+        }
+
         //public Task<ForLargeImages> SelectImageDroid(MyTrailCameraOne mtco)
         //{
         //    throw new NotImplementedException();

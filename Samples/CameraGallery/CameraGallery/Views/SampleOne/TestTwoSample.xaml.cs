@@ -45,7 +45,8 @@ namespace CameraGallery
                 string[] imageOptions = new string[]
                 {
                     "Camera",
-                    "Gallery"
+                    "Gallery",
+                    "CropImage"
                 };
                 var imageChoice = await DisplayActionSheet("Select Image From", "Cancel", null, imageOptions);
                 switch (imageChoice)
@@ -55,6 +56,9 @@ namespace CameraGallery
                         break;
                     case "Gallery":
                         DependencyService.Get<IPictureService>().SelectImage();
+                        break;
+                    case "CropImage":
+                        DependencyService.Get<IPictureService>().CropImage();
                         break;
                     default:
                         break;

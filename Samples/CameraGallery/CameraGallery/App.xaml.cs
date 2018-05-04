@@ -4,11 +4,12 @@ namespace CameraGallery
 {
     public partial class App : Application
     {
+        public static int screenWidth, screenHeight;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new TestTwoSample();
+            MainPage = new TestThreeSample();
         }
 
         protected override void OnStart()

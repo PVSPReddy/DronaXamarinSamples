@@ -8,6 +8,8 @@ namespace CameraGallery
 
         void SelectImage();
 
+        void CropImage();
+
         event EventHandler<IPictureActionArgs> PictureActionCompleted;
 
     }

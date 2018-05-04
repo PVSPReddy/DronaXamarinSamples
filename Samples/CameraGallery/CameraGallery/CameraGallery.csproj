@@ -38,6 +38,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SampleOne\TestThreeSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -55,6 +59,9 @@
     <Compile Include="CustomControls\CropOverLayCircle.cs" />
     <Compile Include="Views\SampleOne\TestTwoSample.xaml.cs">
       <DependentUpon>TestTwoSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SampleOne\TestThreeSample.xaml.cs">
+      <DependentUpon>TestThreeSample.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

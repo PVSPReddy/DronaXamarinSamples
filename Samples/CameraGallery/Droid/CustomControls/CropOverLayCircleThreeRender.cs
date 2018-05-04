@@ -6,10 +6,10 @@ using CameraGallery.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-//[assembly : ExportRenderer(typeof(CropOverLayCircle), typeof(CropOverLayCircleTwoRender))]
+[assembly : ExportRenderer(typeof(CropOverLayCircle), typeof(CropOverLayCircleThreeRender))]
 namespace CameraGallery.Droid
 {
-    public class CropOverLayCircleTwoRender : ViewRenderer, Android.Views.View.IOnTouchListener
+    public class CropOverLayCircleThreeRender : ViewRenderer, Android.Views.View.IOnTouchListener
     {
         CropOverLayCircle element;
         Android.Graphics.Canvas actionCanvas;
@@ -18,7 +18,7 @@ namespace CameraGallery.Droid
         int pointerCurrentDistance = 0, pointerPastDistance = 0;
         Android.Content.Context context;
         //Android.Widget.ImageView img;
-        public CropOverLayCircleTwoRender(Android.Content.Context _context) : base(_context)
+        public CropOverLayCircleThreeRender(Android.Content.Context _context) : base(_context)
         {
             context = _context;
         }
@@ -118,70 +118,6 @@ namespace CameraGallery.Droid
                 {
                     actionCanvas.Restore();
                 }
-                
-                /*
-                bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas osCanvas = new Canvas(bitmap);
-
-                RectF outerRectangle = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
-
-                Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                paint.setColor(getResources().getColor(R.color.overlay));
-                paint.setAlpha(99);
-                osCanvas.drawRect(outerRectangle, paint);
-
-                paint.setColor(Color.TRANSPARENT);
-                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
-                float centerX = getWidth() / 2;
-                float centerY = getHeight() / 2;
-
-                DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-                int width = metrics.widthPixels;
-                float radius = width / 2;
-                osCanvas.drawCircle(centerX, centerY, radius, paint);
-                */
-
-
-                /*
-                #region for bit map android
-                Android.Graphics.Drawables.Drawable icon;
-                if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
-                {
-                    icon = Android.Support.V4.Content.Res.ResourcesCompat.GetDrawable(Resources, Resource.Drawable.WallpaperTwo, null);
-                }
-                else
-                {
-                    icon = Resources.GetDrawable(Resource.Drawable.WallpaperTwo);
-                }
-                Bitmap bp = ((Android.Graphics.Drawables.BitmapDrawable)icon).Bitmap;
-                #endregion
-                Bitmap bp1 = Bitmap.CreateBitmap(Width, Height, Bitmap.Config.Argb8888);
-                var newCanvas = new Canvas(bp1);
-
-                RectF outerRectangle = new RectF(0, 0, bp.Width, bp.Height);
-                Paint paint = new Paint(PaintFlags.AntiAlias);
-                paint.Color = Android.Graphics.Color.ParseColor("#A6000000");
-                //paint.setAlpha(99);
-                newCanvas.DrawRect(outerRectangle, paint);
-
-                paint.Color = Android.Graphics.Color.Transparent;
-                paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcOut));
-                float centerX = Width / 2;
-                float centerY = Height / 2;
-
-                Android.Util.DisplayMetrics metrics = context.Resources.DisplayMetrics;
-                int width = metrics.WidthPixels;
-                float radius = 100;//width / 20;
-                newCanvas.DrawCircle(centerX, centerY, radius, paint);
-
-                actionCanvas = newCanvas;
-                actionCanvas.Save();
-                bp.Dispose();
-                bp1.Dispose();
-                */
-
-
-
                 actionCanvas = canvas;
                 int radius = 0;
                 if (customHeight == 0 && customWidth == 0)
@@ -257,87 +193,8 @@ namespace CameraGallery.Droid
             }
             base.OnDraw(actionCanvas);
         }
-        /*
-        protected override void OnDraw(Android.Graphics.Canvas canvas)
-        {
-            try
-            {
-                actionCanvas = canvas;
-                int radius = 0;
-                if (customHeight == 0 && customWidth == 0)
-                {
-                    customWidth = 200;//Width;
-                    customHeight = 200;//Height;
-                    pointerX = Width / 2;
-                    pointerY = Height / 2;
-                    radius = Math.Min(customWidth, customHeight) / 2;
-                }
-                else
-                {
-                    radius = Math.Min(customWidth, customHeight);
-                }
-
-                pointerPastDistance = radius;
-                var strokeWidth = 10;
-                radius -= strokeWidth / 2;
-
-                actionCanvas.Restore();
-
-                Path path = new Path();
-                path.AddCircle(pointerX, pointerY, radius, Path.Direction.Ccw);
-                path.SetFillType(Path.FillType.InverseEvenOdd);
-                var mSemiBlackPaint = new Paint();
-                mSemiBlackPaint.Color = global::Android.Graphics.Color.Transparent;
-                mSemiBlackPaint.StrokeWidth = 10;
-
-                actionCanvas.DrawPath(path, mSemiBlackPaint);
-                actionCanvas.ClipPath(path);
-
-                actionCanvas.DrawColor(global::Android.Graphics.Color.ParseColor("#A6000000"));
-
-
-
-                #region for bit map android
-                Android.Graphics.Drawables.Drawable icon;
-                if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
-                {
-                    //Android.Content.Context context = GetApplicationContext();
-                    //Android.Resource.Drawable drawable = context.GetDrawable(Resource.Drawable.WallpaperTwo);
-                    //// convert drawable to bitmap
-                    //Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-                    //// convert bitmap to drawable
-                    //Drawable d = new BitmapDrawable(bitmap);
-                    icon = Android.Support.V4.Content.Res.ResourcesCompat.GetDrawable(Resources, Resource.Drawable.WallpaperTwo, null);
-                }
-                else
-                {
-                    icon = Resources.GetDrawable(Resource.Drawable.WallpaperTwo);
-                }
-
-                Bitmap bp = ((Android.Graphics.Drawables.BitmapDrawable)icon).Bitmap;
-                Paint paint = new Paint();
-                Rect rect = new Rect(0, 0, bp.Width, bp.Height);
-
-                paint.AntiAlias = true;
-                //canvas.drawARGB(0, 0, 0, 0);
-                //paint.setColor(color);
-                actionCanvas.DrawBitmap(bp, rect, rect, paint);
-                //Bitmap bp = BitmapFactory.DecodeResource(icon, Resource.Drawable.WallpaperTwo);
-                #endregion
-
-
-                mSemiBlackPaint.Dispose();
-                path.Dispose();
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-            }
-            base.OnDraw(actionCanvas);
-        }
-        */
-
     }
 }
+
 
 
