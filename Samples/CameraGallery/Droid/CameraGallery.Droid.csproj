@@ -123,6 +123,7 @@
     <Compile Include="CustomControls\CropOverLayCircleTwoRender.cs" />
     <Compile Include="CustomControls\CustomImageRender.cs" />
     <Compile Include="CustomControls\CropOverLayCircleThreeRender.cs" />
+    <Compile Include="DependencyServices\CropServiceActivityTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

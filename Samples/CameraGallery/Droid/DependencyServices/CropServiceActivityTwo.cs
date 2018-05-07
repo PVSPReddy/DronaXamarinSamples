@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -16,10 +15,12 @@ namespace CameraGallery.Droid
 {
     //[Activity(Label = "CropServiceActivity")]
     [Activity(Label = "Crop Selected Image")]
-    public class CropServiceActivity : Activity
+    public class CropServiceActivityTwo : Activity
     {
         Bitmap imageBitmap;
-        CropOverLayCircleView overlay;
+        ImageView image;
+        RelativeLayout relativeOverView;
+        CropOverLayCircleViewTwo overlay;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -55,7 +56,7 @@ namespace CameraGallery.Droid
             #endregion
 
             #region for image, crop overlay
-            var relativeOverView = new RelativeLayout(this);
+            relativeOverView = new RelativeLayout(this);
             relativeOverView.SetBackgroundColor(Android.Graphics.Color.Orange);
             relativeOverView.SetMinimumHeight(height * 70);
             relativeOverView.SetMinimumWidth(width * 70);
@@ -65,7 +66,7 @@ namespace CameraGallery.Droid
             relativeOverView.Focusable = false;
             relativeOverView.Clickable = false;
 
-            ImageView image = new ImageView(this);
+            image = new ImageView(this);
             if (imageBitmap != null)
             {
                 image.SetImageBitmap(imageBitmap);
@@ -91,7 +92,7 @@ namespace CameraGallery.Droid
             imageHolderView.AddView(image);
             relativeOverView.AddView(imageHolderView);
 
-            overlay = new CropOverLayCircleView(this);
+            overlay = new CropOverLayCircleViewTwo(this);
             //overlay.SetBackgroundColor(Android.Graphics.Color.Yellow);
             //overlay.SetMinimumHeight(height * 70);
             //overlay.SetMinimumWidth(width * 70);
@@ -168,7 +169,7 @@ namespace CameraGallery.Droid
             {
                 if(overlay != null)
                 {
-                    await overlay.CropTheHighlightedRegion(imageBitmap);
+                    await overlay.CropTheHighlightedRegion(imageBitmap, ((image.Width - relativeOverView.Width)/2), ((image.Height - relativeOverView.Height)/2));
                 }
                 await ClearResidue();
                 Finish();
@@ -217,7 +218,7 @@ namespace CameraGallery.Droid
 
 
 
-    public class CropOverLayCircleView : View//, Android.Views.View.IOnTouchListener
+    public class CropOverLayCircleViewTwo : View//, Android.Views.View.IOnTouchListener
     {
         CropOverLayCircle element;
         Android.Graphics.Canvas actionCanvas;
@@ -227,7 +228,7 @@ namespace CameraGallery.Droid
         Android.Content.Context context;
         Path cutPath;
         //Android.Widget.ImageView img;
-        public CropOverLayCircleView(Android.Content.Context _context) : base(_context)
+        public CropOverLayCircleViewTwo(Android.Content.Context _context) : base(_context)
         {
             context = _context;
             if ((int)Android.OS.Build.VERSION.SdkInt < 18)
@@ -407,6 +408,107 @@ namespace CameraGallery.Droid
                 actionCanvas.Restore();
 
                 Path path = new Path();
+                //path.AddCircle(pointerX, pointerY, radius, Path.Direction.Ccw);
+                //path.AddRect(new RectF(((pointerX + cutRadius) / 2), ((pointerY + cutRadius) / 2), (pointerX + cutRadius), (pointerY + cutRadius)), Path.Direction.Ccw);
+                //path.AddRect(new RectF(Math.Abs(pointerX - (cutRadius / 2)), Math.Abs(pointerY - (cutRadius / 2)), (pointerX + cutRadius), (pointerY + cutRadius)), Path.Direction.Ccw);
+                path.AddRect(new RectF((pointerX - (cutRadius / 2)), (pointerY - (cutRadius / 2)), (pointerX + cutRadius), (pointerY + cutRadius)), Path.Direction.Ccw);
+
+                path.SetFillType(Path.FillType.InverseEvenOdd);
+
+                var mSemiBlackPaint = new Paint();
+                //mSemiBlackPaint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
+                mSemiBlackPaint.Color = global::Android.Graphics.Color.Transparent;
+                mSemiBlackPaint.StrokeWidth = 10;
+
+                actionCanvas.DrawPath(path, mSemiBlackPaint);
+                actionCanvas.ClipPath(path);
+
+                if (cutPath != null)
+                {
+                    cutPath.Dispose();
+                    cutPath = null;
+                    cutPath = path;
+                }
+                else
+                {
+                    cutPath = path;
+                }
+
+                #region for bit map android
+                /*//
+                Android.Graphics.Drawables.Drawable icon;
+                if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
+                {
+                    //Android.Content.Context context = GetApplicationContext();
+                    //Android.Resource.Drawable drawable = context.GetDrawable(Resource.Drawable.WallpaperTwo);
+                    //// convert drawable to bitmap
+                    //Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+                    //// convert bitmap to drawable
+                    //Drawable d = new BitmapDrawable(bitmap);
+                    icon = Android.Support.V4.Content.Res.ResourcesCompat.GetDrawable(Resources, Resource.Drawable.WallpaperTwo, null);
+                }
+                else
+                {
+                    icon = Resources.GetDrawable(Resource.Drawable.WallpaperTwo);
+                }
+
+                Bitmap bp = ((Android.Graphics.Drawables.BitmapDrawable)icon).Bitmap;
+                Paint paint = new Paint();
+                Rect rect = new Rect(0, 0, bp.Width, bp.Height);
+
+                paint.AntiAlias = false;
+                //canvas.drawARGB(0, 0, 0, 0);
+                //paint.setColor(color);
+                actionCanvas.DrawBitmap(bp, rect, rect, paint);
+                //Bitmap bp = BitmapFactory.DecodeResource(icon, Resource.Drawable.WallpaperTwo);
+                *///
+                #endregion
+
+                actionCanvas.DrawColor(global::Android.Graphics.Color.ParseColor("#A6000000"));
+
+                mSemiBlackPaint.Dispose();
+                path.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message + "\n" + ex.StackTrace;
+                System.Diagnostics.Debug.WriteLine(msg);
+            }
+            base.OnDraw(actionCanvas);
+        }
+        /*
+        protected override void OnDraw(Android.Graphics.Canvas canvas)
+        {
+            try
+            {
+                if (actionCanvas != null)
+                {
+                    actionCanvas.Restore();
+                }
+                actionCanvas = canvas;
+                int radius = 0;
+                if (customHeight == 0 && customWidth == 0)
+                {
+                    customWidth = 200;//Width;
+                    customHeight = 200;//Height;
+                    pointerX = Width / 2;
+                    pointerY = Height / 2;
+                    radius = Math.Min(customWidth, customHeight) / 2;
+                }
+                else
+                {
+                    radius = Math.Min(customWidth, customHeight);
+                }
+
+                pointerPastDistance = radius;
+                var strokeWidth = 10;
+                radius -= strokeWidth / 2;
+                cutRadius = radius;
+
+                actionCanvas.Restore();
+
+                Path path = new Path();
                 path.AddCircle(pointerX, pointerY, radius, Path.Direction.Ccw);
                 path.SetFillType(Path.FillType.InverseEvenOdd);
 
@@ -456,7 +558,7 @@ namespace CameraGallery.Droid
                 //paint.setColor(color);
                 actionCanvas.DrawBitmap(bp, rect, rect, paint);
                 //Bitmap bp = BitmapFactory.DecodeResource(icon, Resource.Drawable.WallpaperTwo);
-                */
+                *\/
                 #endregion
 
                 actionCanvas.DrawColor(global::Android.Graphics.Color.ParseColor("#A6000000"));
@@ -472,209 +574,38 @@ namespace CameraGallery.Droid
             }
             base.OnDraw(actionCanvas);
         }
+        */
         #endregion
 
         #region to crop the image
-        /*
-        public async System.Threading.Tasks.Task<bool> CropTheHighlightedRegion(Bitmap sourceBitmap)
+
+        public async System.Threading.Tasks.Task<bool> CropTheHighlightedRegion(Bitmap sourceBitmap, float v1, float v2)
         {
             var _file = new Java.IO.File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures), "CroppedImage.jpg");
             var _uuuri = _file.ToString();
             try
             {
                 //Bitmap output = Bitmap.CreateBitmap(cutRadius, cutRadius, Bitmap.Config.Argb8888);
+                Bitmap output = Bitmap.CreateBitmap(cutRadius, cutRadius, Bitmap.Config.Rgb565);
 
-                int srcx = Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//(Convert.ToInt32(pointerX));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//0;
-                int srcy = Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//(Convert.ToInt32(pointerY));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//0;
+                //Bitmap output = Bitmap.CreateBitmap(sourceBitmap.Width, sourceBitmap.Height, Bitmap.Config.Rgb565);
+                Canvas canvas = new Canvas(output);
+                Paint paint = new Paint(PaintFlags.AntiAlias);
+                paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
+
+                int srcx = (Convert.ToInt32(pointerX - v1));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//(Convert.ToInt32(pointerX));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//0;
+                int srcy = (Convert.ToInt32(pointerY - v2));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//(Convert.ToInt32(pointerY));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//0;
                 int srcWidth = cutRadius;//cutRadius;//720;//sourceBitmap.Width;
                 int srcHeight = cutRadius;//cutRadius;//1280;//sourceBitmap.Height;
                 var srcRect = new Rect(srcx, srcy, srcWidth, srcHeight);
 
                 int dstx = 0;//(sourceBitmap.Width / 2);//(Convert.ToInt32(pointerX));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//0;
                 int dsty = 0;//(sourceBitmap.Height / 2);//(Convert.ToInt32(pointerY));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//0;
-                int dstWidth = sourceBitmap.Width;//cutRadius;//720;//sourceBitmap.Width;
-                int dstHeight = sourceBitmap.Height;//cutRadius;//1280;//sourceBitmap.Height;
+                int dstWidth = cutRadius;//cutRadius;//720;//sourceBitmap.Width;
+                int dstHeight = cutRadius;//cutRadius;//1280;//sourceBitmap.Height;
                 var dstRect = new Rect(dstx, dsty, dstWidth, dstHeight);
 
-                Bitmap output = Bitmap.CreateBitmap(sourceBitmap.Width, sourceBitmap.Height, Bitmap.Config.Argb8888);
-                {
-                }
-
-                Canvas canvas = new Canvas(output);
-                var ressct = new Rect(0, 0, cutRadius, cutRadius);
-                canvas.DrawBitmap(sourceBitmap, ressct, ressct, null);
-                /*
-                //Canvas canvas = new Canvas(output);
-
-                Paint paint = new Paint(PaintFlags.AntiAlias);
-                //paint.SetStyle(Paint.Style.Stroke);
-                //paint.SetStyle(Paint.Style.FillAndStroke);
-                //paint.Color = Android.Graphics.Color.Black;
-                //paint.StrokeWidth = 15;
-                //paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.DstIn));
-                //paint.SetStyle(Paint.Style.Stroke);
-                //paint.Color = Android.Graphics.Color.White;
-                //paint.Color = Android.Graphics.Color.Transparent;
-                //paint.Color = Android.Graphics.Color.ParseColor("0XFF000000");
-                //paint.Color = Android.Graphics.Color.ParseColor("#FF000000");
-
-                //Path path = new Path();
-                //path.AddCircle(pointerX, pointerY, cutRadius, Path.Direction.Ccw);
-                ////path.SetFillType(Path.FillType.InverseEvenOdd);
-                //var mSemiBlackPaint = new Paint();
-                ////mSemiBlackPaint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
-                //mSemiBlackPaint.Color = global::Android.Graphics.Color.Transparent;
-                //mSemiBlackPaint.StrokeWidth = 10;
-
-                Path cutPath = new Path();
-                cutPath.AddRect(new RectF(pointerX, pointerY, cutRadius, cutRadius), Path.Direction.Ccw);
-                //cutPath.AddCircle(pointerX, pointerY, cutRadius, Path.Direction.Ccw);
-                cutPath.SetFillType(Path.FillType.EvenOdd);
-
-                canvas.DrawPath(cutPath, paint);
-                canvas.ClipPath(cutPath);
-
-                //paint.SetXfermode(null);
-                paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
-                //canvas.DrawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height ), new Rect((Convert.ToInt32(pointerX - (cutRadius/2))),(Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius) , paint);
-                //canvas.DrawBitmap(sourceBitmap, 0, 0, paint);
-                //canvas.DrawBitmap(sourceBitmap, 0, 0, paint);
-                //canvas.DrawBitmap(sourceBitmap, new Rect((Convert.ToInt32(pointerX - (cutRadius / 2))), (Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius), new Rect((Convert.ToInt32(pointerX - (cutRadius / 2))), (Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius), paint);
-
-                canvas.DrawBitmap(sourceBitmap, null, dstRect, paint);
-
-
-                //canvas.DrawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height), new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height), paint);
-                //canvas.DrawColor(global::Android.Graphics.Color.ParseColor("#A0000000"));
-
-                //canvas.DrawPath(cutPath, paint);
-                //canvas.ClipPath(cutPath);
-                *
-
-                #region to save a bitmap
-                try
-                {
-                    using (System.IO.Stream stream = System.IO.File.Create(_uuuri))
-                    {
-                        //var filedone = resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 30, stream);
-                        var filedone = output.Compress(Bitmap.CompressFormat.Jpeg, 90, stream);
-                        try
-                        {
-                            PictureActionArgs args = new PictureActionArgs()
-                            {
-                                LocalPictureURL = _uuuri
-                            };
-                            System.Diagnostics.Debug.WriteLine(_uuuri);
-                            XamCustomImage.xamCustomImage.SetImage(_uuuri);
-                        }
-                        catch (Exception ex)
-                        {
-                            var msg = "Line 217 :\n" + ex.Message + "\n" + ex.StackTrace;
-                            System.Diagnostics.Debug.WriteLine(msg);
-                        }
-                        if (sourceBitmap != null)
-                        {
-                            sourceBitmap.Recycle();
-                            sourceBitmap = null;
-                            output.Recycle();
-                            output = null;
-                            //options = null;
-                            System.GC.Collect();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    var msg = ex.Message + "\n" + ex.StackTrace;
-                    System.Diagnostics.Debug.WriteLine(msg);
-                }
-                if (sourceBitmap != null || output != null)
-                {
-                    sourceBitmap.Recycle();
-                    sourceBitmap = null;
-                    if (output != null)
-                    {
-                        output.Recycle();
-                        output = null;
-                    }
-                    //options = null;
-                    System.GC.Collect();
-                }
-                //paint.Dispose();
-                //cutPath.Dispose();
-                //path.Dispose();
-                #endregion
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message + "\n" + ex.StackTrace;
-                System.Diagnostics.Debug.WriteLine(msg);
-            }
-
-            return true;
-        }
-        */
-        
-        public async System.Threading.Tasks.Task<bool> CropTheHighlightedRegion(Bitmap sourceBitmap)
-        {
-            var _file = new Java.IO.File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures), "CroppedImage.jpg");
-            var _uuuri = _file.ToString();
-            try
-            {
-
-                int w = 500, h = 500;
-                //Bitmap output = Bitmap.CreateBitmap(w, h, Bitmap.Config.Argb8888);
-                //Bitmap output = Bitmap.CreateBitmap(cutRadius, cutRadius, Bitmap.Config.Argb8888);
-                Bitmap output = Bitmap.CreateBitmap(sourceBitmap.Width, sourceBitmap.Height, Bitmap.Config.Argb8888);
-                //Canvas canvas = new Canvas(output);
-                Canvas canvas = new Canvas(output);
-                Paint paint = new Paint(PaintFlags.AntiAlias);
-                //paint.SetStyle(Paint.Style.Stroke);
-                //paint.SetStyle(Paint.Style.FillAndStroke);
-                //paint.Color = Android.Graphics.Color.Black;
-                //paint.StrokeWidth = 15;
-                //paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.DstIn));
-                //paint.SetStyle(Paint.Style.Stroke);
-                //paint.Color = Android.Graphics.Color.White;
-                //paint.Color = Android.Graphics.Color.Transparent;
-                //paint.Color = Android.Graphics.Color.ParseColor("0XFF000000");
-                //paint.Color = Android.Graphics.Color.ParseColor("#FF000000");
-
-                //Path path = new Path();
-                //path.AddCircle(pointerX, pointerY, cutRadius, Path.Direction.Ccw);
-                ////path.SetFillType(Path.FillType.InverseEvenOdd);
-                //var mSemiBlackPaint = new Paint();
-                ////mSemiBlackPaint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
-                //mSemiBlackPaint.Color = global::Android.Graphics.Color.Transparent;
-                //mSemiBlackPaint.StrokeWidth = 10;
-
-                Path cutPath = new Path();
-                cutPath.AddCircle(pointerX, pointerY, cutRadius, Path.Direction.Ccw);
-                cutPath.SetFillType(Path.FillType.EvenOdd);
-
-                canvas.DrawPath(cutPath, paint);
-                canvas.ClipPath(cutPath);
-
-                //paint.SetXfermode(null);
-                paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
-                //canvas.DrawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height ), new Rect((Convert.ToInt32(pointerX - (cutRadius/2))),(Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius) , paint);
-                //canvas.DrawBitmap(sourceBitmap, 0, 0, paint);
-                //canvas.DrawBitmap(sourceBitmap, 0, 0, paint);
-                //canvas.DrawBitmap(sourceBitmap, new Rect((Convert.ToInt32(pointerX - (cutRadius / 2))), (Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius), new Rect((Convert.ToInt32(pointerX - (cutRadius / 2))), (Convert.ToInt32((pointerY - (cutRadius / 2)))), cutRadius, cutRadius), paint);
-
-                int srcx = Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//(Convert.ToInt32(pointerX));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//0;
-                int srcy = Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//(Convert.ToInt32(pointerY));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//0;
-                int srcWidth = cutRadius;//cutRadius;//720;//sourceBitmap.Width;
-                int srcHeight = cutRadius;//cutRadius;//1280;//sourceBitmap.Height;
-                var srcRect = new Rect(srcx, srcy, srcWidth, srcHeight);
-
-                int dstx = 0;//(sourceBitmap.Width / 2);//(Convert.ToInt32(pointerX));//Math.Abs((Convert.ToInt32(pointerX - (cutRadius / 2))));//0;
-                int dsty = 0;//(sourceBitmap.Height / 2);//(Convert.ToInt32(pointerY));//Math.Abs((Convert.ToInt32(pointerY - (cutRadius / 2))));//0;
-                int dstWidth = sourceBitmap.Width;//cutRadius;//720;//sourceBitmap.Width;
-                int dstHeight = sourceBitmap.Height;//cutRadius;//1280;//sourceBitmap.Height;
-                var dstRect = new Rect(dstx, dsty, dstWidth, dstHeight);
-
-                canvas.DrawBitmap(sourceBitmap, null, dstRect, paint);
+                canvas.DrawBitmap(sourceBitmap, null, dstRect, null);
 
 
                 //canvas.DrawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height), new Rect(0, 0, sourceBitmap.Width, sourceBitmap.Height), paint);

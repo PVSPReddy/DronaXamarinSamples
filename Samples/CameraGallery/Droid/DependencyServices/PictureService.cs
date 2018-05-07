@@ -97,7 +97,7 @@ namespace CameraGallery.Droid
             var activity = Forms.Context as Activity;
             try
             {
-                var intent = new Intent(activity, typeof(CropServiceActivity));
+                var intent = new Intent(activity, typeof(CropServiceActivityTwo));
                 intent.PutExtra("id", 1);
                 activity.StartActivity(intent);
             }
