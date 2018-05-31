@@ -1,12 +1,9 @@
-﻿<Properties StartupConfiguration="{4285304F-0790-45A1-A40A-9BB4A2F294B9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/CropServiceActivityTwo.cs">
+﻿<Properties StartupConfiguration="{B8F1E2E0-D678-4CE1-BB67-C23A9CAFF8D5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DependencyServices/PictureService.cs">
     <Files>
-      <File FileName="Droid/CustomControls/CustomImageRender.cs" Line="55" Column="27" />
-      <File FileName="CameraGallery/Views/StartPage.xaml" Line="23" Column="13" />
-      <File FileName="CameraGallery/Views/StartPage.xaml.cs" Line="22" Column="21" />
-      <File FileName="CameraGallery/Views/SampleOne/TestThreeSample.xaml" Line="40" Column="15" />
-      <File FileName="Droid/DependencyServices/CropServiceActivityTwo.cs" Line="608" Column="53" />
-      <File FileName="Droid/CustomControls/CropOverLayCircleThreeRender.cs" Line="178" Column="43" />
+      <File FileName="iOS/CustomControls/CropOverLayCircleRender.cs" Line="1" Column="1" />
+      <File FileName="iOS/DependencyServices/PictureService.cs" Line="47" Column="14" />
+      <File FileName="Droid/DependencyServices/PictureService.cs" Line="35" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -22,7 +19,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.CameraGallery.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BD353F08-B061-48E8-A2EF-14D7D4CE4E9C">
+  <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BD353F08-B061-48E8-A2EF-14D7D4CE4E9C" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.CameraGallery.iOS>
 </Properties>
