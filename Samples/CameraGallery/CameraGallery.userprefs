@@ -1,10 +1,28 @@
 ﻿<Properties StartupConfiguration="{B8F1E2E0-D678-4CE1-BB67-C23A9CAFF8D5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DependencyServices/PictureService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/DependencyServices/CropServiceActivityTwo.cs">
     <Files>
+      <File FileName="Droid/DependencyServices/PictureService.cs" Line="13" Column="21" />
+      <File FileName="Droid/DependencyServices/CropServiceActivityTwo.cs" Line="406" Column="17" />
       <File FileName="iOS/CustomControls/CropOverLayCircleRender.cs" Line="1" Column="1" />
-      <File FileName="iOS/DependencyServices/PictureService.cs" Line="47" Column="14" />
-      <File FileName="Droid/DependencyServices/PictureService.cs" Line="35" Column="9" />
+      <File FileName="Droid/CustomControls/CropOverLayCircleThreeRender.cs" Line="114" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CameraGallery" expanded="True">
+            <Node name="CameraGallery.Droid" expanded="True">
+              <Node name="CustomControls" expanded="True" />
+              <Node name="DependencyServices" expanded="True">
+                <Node name="CropServiceActivityTwo.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="CameraGallery.iOS" expanded="True">
+              <Node name="CustomControls" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -14,10 +32,14 @@
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" relfile="CameraGallery/Views/SampleOne/TestOneSample.xaml.cs" line="24" column="1" />
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="254" column="1" />
       <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="252" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="48" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleTwoRender.cs" relfile="Droid/CustomControls/CropOverLayCircleTwoRender.cs" line="114" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/CustomControls/CropOverLayCircleRender.cs" relfile="Droid/CustomControls/CropOverLayCircleRender.cs" line="40" column="1" />
+      <Breakpoint file="/Users/rabbit/Desktop/Sivaprasad/untitled folder/Personal ProjFiles/DronaXamarinSamples/Samples/CameraGallery/Droid/DependencyServices/CropServiceActivity.cs" relfile="Droid/DependencyServices/CropServiceActivity.cs" line="184" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CameraGallery.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.ItemProperties.CameraGallery.Droid PreferredExecutionTarget="Android.ZY222Z3P7X" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.CameraGallery.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BD353F08-B061-48E8-A2EF-14D7D4CE4E9C" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />

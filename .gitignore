@@ -13,6 +13,9 @@ bin/
 # Ignore folder named 'packages'
 packages/
 
+# Ignore folder named '.vs'
+.vs/
+
 # Ignore file names 'IsIgnoreWorking.js'
 IsIgnoreWorking.js
 
