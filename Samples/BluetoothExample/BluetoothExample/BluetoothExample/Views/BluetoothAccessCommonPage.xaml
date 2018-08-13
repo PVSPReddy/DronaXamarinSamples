@@ -35,8 +35,8 @@
 					</ScrollView>
 					<!--<Label x:Name="labelDataFill" Text="Start : \n" BackgroundColor="Teal" TextColor="Black">
 					</Label>-->
-                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <ListView x:Name="lvDisplay">
+                    <!--<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <ListView x:Name="lvDisplay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -50,7 +50,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                    </StackLayout>
+                    </StackLayout>-->
                 </StackLayout>
             </StackLayout>
             

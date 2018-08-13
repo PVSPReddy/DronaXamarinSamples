@@ -16,7 +16,7 @@ using Android.Support.V4.Content;
 namespace BluetoothExample.Droid
 {
     [Activity(Label = "BluetoothServices")]
-    public class BluetoothServices : BluetoothAdapter.ILeScanCallback, IBluetooth
+    public class BluetoothServices : Java.Lang.Object,BluetoothAdapter.ILeScanCallback, IBluetooth
     {
         public BluetoothServices()
         {

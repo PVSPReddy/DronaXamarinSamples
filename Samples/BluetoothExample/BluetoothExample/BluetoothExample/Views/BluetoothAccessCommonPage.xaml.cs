@@ -37,7 +37,7 @@ namespace BluetoothExample
                 }
             };
 
-            lvDisplay.ItemSelected += SelectedBluetoothDevice;
+            //lvDisplay.ItemSelected += SelectedBluetoothDevice;
         }
 
         void StartBluetoothClicked(object sender, EventArgs e)
@@ -71,8 +71,8 @@ namespace BluetoothExample
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    //lvDisplay.BeginRefresh();
-                    lvDisplay.ItemsSource = allDevices;
+                    ////lvDisplay.BeginRefresh();
+                    //lvDisplay.ItemsSource = allDevices;
                 });
             }
             catch (Exception ex)

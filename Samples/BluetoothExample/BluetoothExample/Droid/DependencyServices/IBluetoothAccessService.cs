@@ -6,7 +6,7 @@ using Xamarin.Forms;
 //[assembly: Dependency(typeof(IBluetoothAccessService))]
 namespace BluetoothExample.Droid
 {
-    public class IBluetoothAccessService : BluetoothAdapter.ILeScanCallback//,IBluetoothAccess
+    public class IBluetoothAccessService : Java.Lang.Object, BluetoothAdapter.ILeScanCallback//,IBluetoothAccess
     {
         public IntPtr Handle
         {

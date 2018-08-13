@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SocketsExample.SocketPageTestOne">
+    
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Button x:Name="socketStartButton" Text="Start" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Button>
+                    <Button x:Name="socketStopButton" Text="Stop" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    </Button>
+                </StackLayout>
+                <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label x:Name="socketMessages" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        </Label>
+                    </StackLayout>
+                </ScrollView>
+                <Entry x:Name="entryText" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                </Entry>
+                <Button x:Name="sendButton" Text="Send" HorizontalOptions="FillAndExpand" VerticalOptions="End">                    
+                </Button>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
