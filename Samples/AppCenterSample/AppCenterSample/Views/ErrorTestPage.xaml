@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="AppCenterSample.Views.ErrorTestPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0" />
+            <On Platform="Android" Value="0,0,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Button x:Name="errorButton" Text="Send Error Event" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    
+                </Button>
+                <Button x:Name="crashButton" Text="Send Crash" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    
+                </Button>
+                
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

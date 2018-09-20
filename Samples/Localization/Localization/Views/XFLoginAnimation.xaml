@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Localization.Views.XFLoginAnimation">
+    <ContentPage.Content>  
+        <Grid x:Name="mainGrid">  
+            <Grid.RowDefinitions>  
+                <RowDefinition Height="150" />  
+                <RowDefinition Height="*" />  
+            </Grid.RowDefinitions>  
+            <Grid Grid.Row="0">  
+                <Image Source="BGimg" Aspect="AspectFill" />  
+                <StackLayout Padding="20">  
+                    <!--<forms:CachedImage x:Name="Logo" HeightRequest="70" WidthRequest="70" Source="icon" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">  
+                        <forms:CachedImage.Transformations>  
+                            <transformations:RoundedTransformation Radius="250" BorderSize="0" />  
+                        </forms:CachedImage.Transformations>  
+                    </forms:CachedImage> -->
+                    <Image x:Name="Logo" HeightRequest="70" WidthRequest="70" Source="icon" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">  
+                        <!--<Image.Transformations>  
+                            <transformations:RoundedTransformation Radius="250" BorderSize="0" />  
+                        </Image.Transformations>-->  
+                    </Image> 
+                    <Label Text="Logo Title" FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />  
+                </StackLayout>  
+            </Grid>  
+            <Grid Padding="20" Grid.Row="1" ColumnSpacing="0">  
+                <Grid.RowDefinitions>  
+                    <RowDefinition Height="Auto" />  
+                    <RowDefinition Height="4" />  
+                    <RowDefinition Height="Auto" />  
+                    <RowDefinition Height="Auto" />  
+                    <RowDefinition Height="Auto" />  
+                    <RowDefinition Height="Auto" />  
+                    <RowDefinition Height="*" />  
+                </Grid.RowDefinitions>  
+                <Grid.ColumnDefinitions>  
+                    <ColumnDefinition Width=".5*" />  
+                    <ColumnDefinition Width=".5*" />  
+                </Grid.ColumnDefinitions>  
+                <Label x:Name="mainsignin" Text="Sign In" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">  
+                    <Label.GestureRecognizers>  
+                        <TapGestureRecognizer Tapped="mainsignin_Tapped" />  
+                    </Label.GestureRecognizers>  
+                </Label>  
+                <Label x:Name="mainsignup" HorizontalTextAlignment="Center" Text="Sign Up" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand">  
+                    <Label.GestureRecognizers>  
+                        <TapGestureRecognizer Tapped="mainsignup_Tapped" />  
+                    </Label.GestureRecognizers>  
+                </Label>  
+                <BoxView x:Name="mainbox" BackgroundColor="Black" Grid.Row="1" Grid.Column="0" />  
+                <BoxView x:Name="mainbox1" VerticalOptions="End" BackgroundColor="Black" Opacity=".3" HeightRequest="2" Grid.Row="1" Grid.Column="0" />  
+                <BoxView x:Name="mainbox2" VerticalOptions="End" BackgroundColor="Black" Opacity=".3" HeightRequest="2" Grid.Row="1" Grid.Column="1" />  
+                <Grid x:Name="layoutuser" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">  
+                    <Grid.ColumnDefinitions>  
+                        <ColumnDefinition Width="18" />  
+                        <ColumnDefinition Width="*" />  
+                    </Grid.ColumnDefinitions>  
+                    <Image Grid.Column="0" Source="mobile" Aspect="AspectFit" HeightRequest="18" />  
+                    <Entry Grid.Column="1" Placeholder="Mobile/Email" />  
+                </Grid>  
+                <Grid x:Name="layoutpass" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">  
+                    <Grid.ColumnDefinitions>  
+                        <ColumnDefinition Width="18" />  
+                        <ColumnDefinition Width="*" />  
+                    </Grid.ColumnDefinitions>  
+                    <Image Grid.Column="0" Source="lock" Aspect="AspectFit" HeightRequest="18" />  
+                    <Entry Grid.Column="1" Placeholder="Password" />  
+                </Grid>  
+                <Grid x:Name="layoutconfpass" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">  
+                    <Grid.ColumnDefinitions>  
+                        <ColumnDefinition Width="18" />  
+                        <ColumnDefinition Width="*" />  
+                    </Grid.ColumnDefinitions>  
+                    <Image Grid.Column="0" Source="key" Aspect="AspectFit" HeightRequest="18" />  
+                    <Entry Grid.Column="1" Placeholder="SMS Varification Code" />  
+                </Grid>  
+                <StackLayout x:Name="Social" Opacity="1" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="10" Orientation="Horizontal" Spacing="45" HorizontalOptions="CenterAndExpand">  
+                    <!--<forms:CachedImage x:Name="GLImage" HeightRequest="45" WidthRequest="45" Source="googlep" Aspect="AspectFit" HorizontalOptions="StartAndExpand">  
+                        <forms:CachedImage.Transformations>  
+                            <transformations:RoundedTransformation Radius="250" BorderSize="0" />  
+                        </forms:CachedImage.Transformations>  
+                    </forms:CachedImage>  
+                    <forms:CachedImage x:Name="FBImage" HeightRequest="55" WidthRequest="55" Source="facebook" Aspect="AspectFit" HorizontalOptions="CenterAndExpand">  
+                        <forms:CachedImage.Transformations>  
+                            <transformations:RoundedTransformation Radius="250" BorderSize="0" />  
+                        </forms:CachedImage.Transformations>  
+                    </forms:CachedImage>  
+                    <forms:CachedImage x:Name="TWImage" HeightRequest="45" WidthRequest="45" Source="twitter" Aspect="AspectFit" HorizontalOptions="EndAndExpand">  
+                        <forms:CachedImage.Transformations>  
+                            <transformations:RoundedTransformation Radius="250" BorderSize="0" />  
+                        </forms:CachedImage.Transformations>  
+                    </forms:CachedImage> --> 
+                </StackLayout>  
+                <Button x:Name="btn" Text="Sign In" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" BorderColor="Gray" BorderRadius="5" BorderWidth="5" TextColor="Teal" />  
+            </Grid>  
+        </Grid>  
+    </ContentPage.Content>
+</ContentPage>
+<!--<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XamBuddyApp.XFInterface.XFLogins.XFLoginAnimation" 
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+    BackgroundColor="#9688EE" 
+    Title="Login Page">     
+</ContentPage>-->  

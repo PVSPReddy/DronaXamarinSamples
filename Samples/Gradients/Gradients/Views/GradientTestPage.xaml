@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Gradients.CustomControls;assembly=Gradients"
+    x:Class="Gradients.Views.GradientTestPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+            <On Platform="Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <FlexLayout Direction="Column" JustifyContent="SpaceAround">
+            <Label Text="Gradients" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+            <StackLayout>
+                <local:HorizontalGradientStack HeightRequest="200" WidthRequest="300" StartColor="Green" EndColor="Yellow" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                <Label Text="Horizontal Gradient" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"/>
+            </StackLayout>
+            <StackLayout>
+                <local:VerticalGradientStack HeightRequest="200" WidthRequest="300" StartColor="Green" EndColor="Yellow" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                <Label Text="Vertical Gradient" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" />
+            </StackLayout>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

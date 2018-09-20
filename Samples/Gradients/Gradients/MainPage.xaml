@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Gradients" x:Class="Gradients.MainPage">
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Button x:Name="SubmitButton" Text="Go to Gradient Page" BackgroundColor="Teal" TextColor="Maroon" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Clicked="SubmitButtonClicked"></Button>
+    </StackLayout>
+</ContentPage>

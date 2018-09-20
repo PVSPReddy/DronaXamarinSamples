@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="AdMob.Views.IntroPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+            <On Platform="Android" Value="0,0,0,0"/>
+            <On Platform="WinPhone" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout" VerticalOptions="FillAndExpand" Padding="0,50,0,0">
+            <Button Text="Test Banner Ad" HorizontalOptions="FillAndExpand" TextColor="Blue"  BackgroundColor="White" Clicked="BannerAdShowClick"/>
+            <Button Text="Test Interstitial Ad" HorizontalOptions="FillAndExpand" TextColor="Blue"  BackgroundColor="White" Clicked="InterstitialAdShowClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

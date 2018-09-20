@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TakeScreenShot.Views.ScreenShotSource">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelOption" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="entryOption" TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+            <On Platform="Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20,0,20,0" Orientation="Horizontal" BackgroundColor="Teal" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Source for ScreenShot" TextColor="Maroon" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+                <Button Text="Submit" TextColor="Teal" BackgroundColor="Maroon" WidthRequest="100" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Clicked="SubmitButtonCLicked"></Button>
+            </StackLayout>
+            <StackLayout Padding="20,0,20,0" BackgroundColor="Green" AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Olive">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="First Name" Style="{StaticResource labelOption}" Grid.Row="0" Grid.Column="0"></Label>
+                    <Entry Placeholder="Enter First Name" Style="{StaticResource entryOption}" Grid.Row="0" Grid.Column="1"></Entry>
+                    
+                    <Label Text="Last Name" Style="{StaticResource labelOption}" Grid.Row="1" Grid.Column="0"></Label>
+                    <Entry Placeholder="Enter Last Name" Style="{StaticResource entryOption}" Grid.Row="1" Grid.Column="1"></Entry>
+                    
+                    <Label Text="Company Name" Style="{StaticResource labelOption}" Grid.Row="2" Grid.Column="0"></Label>
+                    <Entry Placeholder="Enter Company Name" Style="{StaticResource entryOption}" Grid.Row="2" Grid.Column="1"></Entry>
+                    
+                    <Label Text="Mobile" Style="{StaticResource labelOption}" Grid.Row="3" Grid.Column="0"></Label>
+                    <Entry Placeholder="Enter Mobile Number" Style="{StaticResource entryOption}" Grid.Row="3" Grid.Column="1"></Entry>
+                    
+                    <Label Text="Email" Style="{StaticResource labelOption}" Grid.Row="4" Grid.Column="0"></Label>
+                    <Entry Placeholder="Enter Email ID" Style="{StaticResource entryOption}" Grid.Row="4" Grid.Column="1"></Entry>
+                    
+                    <Label Text="Address" Style="{StaticResource labelOption}" Grid.Row="5" Grid.Column="0"></Label>
+                    <Editor Text="Enter Address" Grid.Row="5" Grid.Column="1"></Editor>
+
+                </Grid>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

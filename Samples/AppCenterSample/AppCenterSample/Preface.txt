@@ -1,0 +1,50 @@
+﻿Add Packages
+In PCL
+Microsoft.AppCenter
+Microsoft.AppCenter.Analytics;
+Microsoft.AppCenter.Crashes;
+Microsoft.AppCenter.Push
+
+In Android
+Microsoft.AppCenter
+Microsoft.AppCenter.Analytics;
+Microsoft.AppCenter.Crashes;
+Microsoft.AppCenter.Push
+
+In iOS
+Microsoft.AppCenter
+Microsoft.AppCenter.Analytics;
+Microsoft.AppCenter.Crashes;
+Microsoft.AppCenter.Push
+
+
+
+
+In App.cs
+Add the line in OnStart() method
+AppCenter.Start("ios=[ios secret key with out the braces];android=[android secret key with out the braces];", typeof(Analytics), typeof(Crashes));
+
+
+In MainActivity.cs
+AppCenter.Start("[android secret key with out the braces]", typeof(Analytics), typeof(Crashes));
+
+In AppDelegate.cs
+AppCenter.Start("[ios secret key with out the braces]", typeof(Analytics), typeof(Crashes));
+
+
+
+
+
+Now in PCL in catch block
+Crashes.TrackError(Exception, String[] properties);//to track crashes
+Analytics.TrackEvent("Any Custom Message");//to track events occured
+
+
+
+
+In AndroidManifest.xml
+permissions for Internet 
+
+In info.plist
+NSAppTransportSecurity : Dictionary
+NSAllowsArbitraryLoads : bool : yes

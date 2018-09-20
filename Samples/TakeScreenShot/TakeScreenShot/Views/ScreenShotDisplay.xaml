@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TakeScreenShot.Views.ScreenShotDisplay">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+            <On Platform="Android" Value="0,0,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20,0,20,0" Orientation="Horizontal" BackgroundColor="Teal" AbsoluteLayout.LayoutBounds="0,0,1,0.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Button Text="Back" TextColor="Teal" BackgroundColor="Maroon" WidthRequest="100" Clicked="BackButtonCLicked" HorizontalOptions="Start" VerticalOptions="Center" ></Button>
+                <Label Text="Result of ScreenShot" TextColor="Maroon" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+            </StackLayout>
+            <StackLayout Padding="20,0,20,0" BackgroundColor="Yellow" AbsoluteLayout.LayoutBounds="1,1,1,0.9" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image x:Name="imgScreenShot" HeightRequest="400" WidthRequest="300" HorizontalOptions="FillAndExpand" Aspect="Fill" VerticalOptions="FillAndExpand" BackgroundColor="Blue"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
